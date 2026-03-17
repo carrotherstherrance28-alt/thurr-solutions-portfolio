@@ -405,6 +405,24 @@
   footer a:hover { color: var(--orange); }
   .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
 
+  /* ── ABOUT ── */
+  .about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+  @media (max-width: 768px) { .about-wrap { grid-template-columns: 1fr; } }
+  .about-statement {
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    color: var(--white); line-height: 1.75; font-weight: 500;
+    border-left: 3px solid var(--orange); padding-left: 1.5rem;
+  }
+  .about-detail { font-size: 0.925rem; color: var(--light); line-height: 1.85; }
+
+  /* ── HERO RESULTS ── */
+  .hero-results { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
+  .hero-result-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.825rem; color: var(--light); font-weight: 500;
+  }
+  .hero-result-item::before { content: '✓'; color: var(--orange); font-weight: 900; font-size: 0.9rem; }
+
   /* ── DIVIDER ── */
   .divider { height: 1px; background: var(--border); }
 
@@ -458,8 +476,8 @@
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">2,094%</div>
-        <div class="hero-stat-label">ROI Delivered</div>
+        <div class="hero-stat-num">$1,280/mo</div>
+        <div class="hero-stat-label">Net Monthly Benefit</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">16 days</div>
@@ -473,6 +491,24 @@
         <div class="hero-stat-num">20+ hrs</div>
         <div class="hero-stat-label">Automated Monthly</div>
       </div>
+    </div>
+    <div class="hero-results">
+      <span class="hero-result-item">70–87% reduction in manual processing time</span>
+      <span class="hero-result-item">15–20 hours automated per month</span>
+      <span class="hero-result-item">4–6 week average payback period</span>
+      <span class="hero-result-item">Near-zero error rates in automated processes</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="about-wrap">
+      <p class="about-statement">I specialize in designing scalable automation systems across revenue operations, sales workflows, and client onboarding. My background in Finance gives me a different lens than most automation builders — I look at your P&L first, find where manual labor is eating your margin, and engineer it out of existence.</p>
+      <p class="about-detail">My approach combines business process analysis, ROI estimation, AI integration, and long-term system reliability. I work with growing businesses ready to replace manual workflows with intelligent systems that drive measurable outcomes — not just implement tools.<br><br>Every engagement starts with a workflow audit. Before I write a single line of automation, I identify exactly where the time is going, what it's costing, and what the system needs to do to eliminate it. The result is automation that pays for itself fast — and keeps running reliably.</p>
     </div>
   </div>
 </section>
@@ -557,7 +593,7 @@
     <div class="result-item"><div class="num">20+</div><div class="lbl">Hours Automated Monthly</div></div>
     <div class="result-item"><div class="num">87%</div><div class="lbl">Reduction in Manual Work</div></div>
     <div class="result-item"><div class="num">16 days</div><div class="lbl">Average Payback Period</div></div>
-    <div class="result-item"><div class="num">2,094%</div><div class="lbl">ROI on Investment</div></div>
+    <div class="result-item"><div class="num">668%</div><div class="lbl">First-Year ROI</div></div>
   </div>
 </section>
 
@@ -587,6 +623,8 @@
         <div class="project-section">
           <h4>Business Problem</h4>
           <p>SDRs spent 15 minutes per lead manually verifying emails, researching companies, scoring ICP fit, and updating spreadsheets. At 100 leads per month — 25 hours of SDR time wasted on data entry, costing $875/month with no consistency, no audit trail, and 15–20% invalid emails reaching outreach.</p>
+          <h4>As-Is Process</h4>
+          <p>SDRs manually verified emails, researched companies via LinkedIn and Google, scored ICP fit in spreadsheets, then updated tracking sheets and notified sales via ad-hoc Slack messages — creating inconsistent data quality and a 15-minute time sink per lead.</p>
           <h4>Automated Process</h4>
           <div class="process-flow">
             <span class="flow-step">Daily Trigger</span><span class="flow-arrow">→</span>
@@ -609,7 +647,7 @@
         <div class="project-section">
           <h4>Results</h4>
           <div class="metrics-grid">
-            <div class="metric-box"><div class="metric-val">2,094%</div><div class="metric-lbl">12-Month ROI</div></div>
+            <div class="metric-box"><div class="metric-val">668%</div><div class="metric-lbl">First-Year ROI</div></div>
             <div class="metric-box"><div class="metric-val">16 days</div><div class="metric-lbl">Payback Period</div></div>
             <div class="metric-box"><div class="metric-val">$1,280</div><div class="metric-lbl">Monthly Net Benefit</div></div>
             <div class="metric-box"><div class="metric-val">−87%</div><div class="metric-lbl">Time Per Lead</div></div>
@@ -709,29 +747,75 @@
       </div>
     </div>
 
-    <!-- P3 COMING SOON -->
-    <div class="project-card coming-soon">
-      <div class="coming-badge">🔧 In Development</div>
+    <!-- P3 -->
+    <div class="project-card">
       <div class="project-header">
         <div class="project-meta">
-          <div class="project-industry">Roofing · Houston, TX · Storm Response</div>
-          <h3>Storm Response Lead Intake Engine</h3>
+          <div class="project-industry">Roofing · Construction · Client Operations</div>
+          <h3>Client Onboarding Automation Engine</h3>
           <div class="project-badges">
-            <span class="badge">Lead Capture</span>
-            <span class="badge">AI Qualification</span>
-            <span class="badge">Auto-Scheduling</span>
-            <span class="badge">SMS Confirmation</span>
+            <span class="badge orange">Welcome Automation</span>
+            <span class="badge blue">Drive Folder Setup</span>
+            <span class="badge">CRM Creation</span>
+            <span class="badge">Slack Alerts</span>
           </div>
         </div>
-        <div class="project-nodes">⚙ n8n · In Build</div>
+        <div class="project-nodes">⚙ n8n · Google Drive · Airtable</div>
       </div>
-      <p style="color:var(--muted);font-size:0.875rem;max-width:640px;line-height:1.75">
-        An automation system that captures incoming storm-damage inquiries from web forms, phone calls, and ads — instantly qualifies the lead, schedules an inspection, sends SMS confirmation to homeowners, and alerts the sales team. Built specifically for Houston-area roofing companies responding to storm season demand spikes.
-      </p>
-      <div class="project-tags" style="margin-top:1.5rem;padding-top:1.5rem">
-        <span class="tag">Roofing</span><span class="tag">Houston TX</span>
-        <span class="tag">Storm Response</span><span class="tag">Lead Intake</span>
-        <span class="tag">SMS Automation</span><span class="tag">Inspection Scheduling</span>
+      <div class="project-body">
+        <div class="project-section">
+          <h4>Business Problem</h4>
+          <p>After a roofing contract was signed, office staff manually emailed welcome packets, created Drive folders by hand, texted project managers, and logged client info into spreadsheets — taking 60–90 minutes per new client and creating frequent data entry errors across systems.</p>
+          <h4>As-Is Process</h4>
+          <p>Office staff manually emailed welcome packets, created Drive folders by hand, texted project managers, and logged client info into spreadsheets — creating frequent data entry errors and consuming 60–90 minutes per new client.</p>
+          <h4>Automated Process</h4>
+          <div class="process-flow">
+            <span class="flow-step">Contract Signed</span><span class="flow-arrow">→</span>
+            <span class="flow-step">Welcome Email</span><span class="flow-arrow">→</span>
+            <span class="flow-step">Drive Folders</span><span class="flow-arrow">→</span>
+            <span class="flow-step">CRM Record</span><span class="flow-arrow">→</span>
+            <span class="flow-step">PM Alert</span><span class="flow-arrow">→</span>
+            <span class="flow-step">Follow-up Scheduled</span>
+          </div>
+          <h4>Key Features</h4>
+          <ul>
+            <li>Triggers automatically on contract signed webhook or form submission</li>
+            <li>Sends welcome email + branded PDF packet to client instantly</li>
+            <li>Creates Google Drive folder structure (Contract, Photos, Invoices, Permits)</li>
+            <li>Creates client record in Airtable CRM with all job details populated</li>
+            <li>Notifies project manager via Slack with full job summary</li>
+            <li>Schedules 3-day follow-up check-in email automatically</li>
+          </ul>
+        </div>
+        <div class="project-section">
+          <h4>Results</h4>
+          <div class="metrics-grid">
+            <div class="metric-box"><div class="metric-val">&lt;2 min</div><div class="metric-lbl">Onboarding Time</div></div>
+            <div class="metric-box"><div class="metric-val">~5 wks</div><div class="metric-lbl">Payback Period</div></div>
+            <div class="metric-box"><div class="metric-val">$547/mo</div><div class="metric-lbl">Net Benefit</div></div>
+            <div class="metric-box"><div class="metric-val">742%</div><div class="metric-lbl">First-Year ROI</div></div>
+          </div>
+          <ul>
+            <li>Onboarding time: 60–90 minutes → under 2 minutes per client</li>
+            <li>Manual data entry errors eliminated across Drive, CRM, and Slack</li>
+            <li>Project managers notified in real time — no missed handoffs</li>
+            <li>Follow-up never forgotten — scheduled automatically at contract signing</li>
+            <li>Scales with volume — handles 15+ new clients/month without added staff</li>
+          </ul>
+          <h4 style="margin-top:1.25rem">Stack</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem">
+            <span class="badge orange">n8n</span>
+            <span class="badge blue">Google Drive API</span>
+            <span class="badge">Airtable</span>
+            <span class="badge">Gmail / SendGrid</span>
+            <span class="badge">Slack</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Home Services</span><span class="tag">Roofing</span>
+        <span class="tag">Client Onboarding</span><span class="tag">CRM Automation</span>
+        <span class="tag">Document Management</span><span class="tag">Operations</span>
       </div>
     </div>
   </div>

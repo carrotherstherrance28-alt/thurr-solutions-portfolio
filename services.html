@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thurr Solutions | AI Automation for Local Service Businesses</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23f97316'/><text y='.9em' font-size='72' font-family='Arial Black,sans-serif' font-weight='900' fill='white' x='50%' text-anchor='middle' dominant-baseline='auto' dy='8'>T</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23070809'/><text font-size='54' font-family='Arial Black,sans-serif' font-weight='900' fill='white' x='18' y='72'>T</text><text font-size='54' font-family='Arial Black,sans-serif' font-weight='900' fill='%23f36c21' x='52' y='72'>R</text></svg>">
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap');
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
@@ -18,17 +20,17 @@
     --border:  #2a3038;
     --border2: #333c45;
 
-    --orange:  #f97316;
-    --orange2: #ea6c0a;
-    --orange3: #fb923c;
-    --orangeL: rgba(249,115,22,0.12);
-    --orangeB: rgba(249,115,22,0.25);
+    --orange:  #f36c21;
+    --orange2: #d95e18;
+    --orange3: #f58040;
+    --orangeL: rgba(243,108,33,0.12);
+    --orangeB: rgba(243,108,33,0.25);
 
-    --blue:    #3b82f6;
-    --blue2:   #2563eb;
-    --blue3:   #60a5fa;
-    --blueL:   rgba(59,130,246,0.12);
-    --blueB:   rgba(59,130,246,0.25);
+    --blue:    #3e50a1;
+    --blue2:   #2f3e88;
+    --blue3:   #5f72be;
+    --blueL:   rgba(62,80,161,0.12);
+    --blueB:   rgba(62,80,161,0.25);
 
     --white:   #ffffff;
     --text:    #f0f2f5;
@@ -40,6 +42,8 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--black); color: var(--text); line-height: 1.6; }
 
+  h1, h2, h3 { font-family: 'Oswald', 'Segoe UI', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; }
+
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
@@ -49,8 +53,20 @@
     display: flex; align-items: center; justify-content: space-between;
     height: 68px;
   }
-  .nav-brand { font-weight: 800; font-size: 1.15rem; color: var(--white); letter-spacing: -0.01em; text-decoration: none; }
-  .nav-brand span { color: var(--orange); }
+  .nav-brand {
+    display: flex; flex-direction: column; line-height: 1;
+    text-decoration: none; gap: 0;
+  }
+  .nav-brand .brand-right {
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nav-brand .brand-thurr {
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 1.3rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--orange);
+  }
   .nav-links { display: flex; gap: 2.25rem; list-style: none; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--white); }
@@ -191,6 +207,11 @@
   footer a:hover { color: var(--orange); }
   .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
 
+  /* ── BRAND LOGO ── */
+  .brand-logo-wrap { margin-bottom: 1.5rem; }
+  .brand-logo { height: 72px; width: auto; border-radius: 14px; display: block; }
+  .brand-logo-center { height: 80px; width: auto; border-radius: 14px; display: block; margin: 0 auto 2rem; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 0 1.25rem; }
@@ -206,7 +227,10 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-brand">Thurr <span>Solutions</span></a>
+  <a href="index.html" class="nav-brand">
+    <span class="brand-right">Right</span>
+    <span class="brand-thurr">Thurr</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#results">Results</a></li>
@@ -223,6 +247,9 @@
   <div class="hero-glow1"></div>
   <div class="hero-glow2"></div>
   <div class="hero-inner">
+    <div class="brand-logo-wrap">
+      <img src="logo-blue.png" alt="Right Thurr" class="brand-logo">
+    </div>
     <div class="available-badge">
       <span class="available-dot"></span>
       Now serving Houston, TX &amp; St. Louis, MO
@@ -390,6 +417,7 @@
 <section id="contact">
   <div class="section-inner">
     <div class="contact-wrap">
+      <img src="logo-orange.png" alt="Right Thurr" class="brand-logo-center">
       <div class="section-label" style="text-align:center">Let's Talk</div>
       <h2 class="section-title" style="text-align:center">Ready to Stop Losing Leads?</h2>
       <p class="section-sub" style="text-align:center;margin:0 auto 0">Book a free workflow audit — I'll show you exactly where automation delivers the most value for your business and what it's worth in dollars.</p>

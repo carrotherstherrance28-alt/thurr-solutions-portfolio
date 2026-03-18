@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Therrance Carrothers | AI Automation Consultant</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23070809'/><text font-size='54' font-family='Arial Black,sans-serif' font-weight='900' fill='white' x='18' y='72'>T</text><text font-size='54' font-family='Arial Black,sans-serif' font-weight='900' fill='%23f36c21' x='52' y='72'>R</text></svg>">
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap');
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
@@ -17,17 +20,17 @@
     --border:  #2a3038;
     --border2: #333c45;
 
-    --orange:  #f97316;
-    --orange2: #ea6c0a;
-    --orange3: #fb923c;
-    --orangeL: rgba(249,115,22,0.12);
-    --orangeB: rgba(249,115,22,0.25);
+    --orange:  #f36c21;
+    --orange2: #d95e18;
+    --orange3: #f58040;
+    --orangeL: rgba(243,108,33,0.12);
+    --orangeB: rgba(243,108,33,0.25);
 
-    --blue:    #3b82f6;
-    --blue2:   #2563eb;
-    --blue3:   #60a5fa;
-    --blueL:   rgba(59,130,246,0.12);
-    --blueB:   rgba(59,130,246,0.25);
+    --blue:    #3e50a1;
+    --blue2:   #2f3e88;
+    --blue3:   #5f72be;
+    --blueL:   rgba(62,80,161,0.12);
+    --blueB:   rgba(62,80,161,0.25);
 
     --white:   #ffffff;
     --text:    #f0f2f5;
@@ -45,6 +48,8 @@
     line-height: 1.6;
   }
 
+  h1, h2, h3 { font-family: 'Oswald', 'Segoe UI', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; }
+
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
@@ -56,10 +61,19 @@
     height: 68px;
   }
   .nav-brand {
-    font-weight: 800; font-size: 1.15rem; color: var(--white);
-    letter-spacing: -0.01em;
+    display: flex; flex-direction: column; line-height: 1;
+    text-decoration: none; gap: 0;
   }
-  .nav-brand span { color: var(--orange); }
+  .nav-brand .brand-right {
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nav-brand .brand-thurr {
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 1.3rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--orange);
+  }
   .nav-links { display: flex; gap: 2.25rem; list-style: none; }
   .nav-links a {
     color: var(--muted); text-decoration: none;
@@ -426,6 +440,11 @@
   /* ── DIVIDER ── */
   .divider { height: 1px; background: var(--border); }
 
+  /* ── BRAND LOGO ── */
+  .brand-logo-wrap { margin-bottom: 1.5rem; }
+  .brand-logo { height: 72px; width: auto; border-radius: 14px; display: block; }
+  .brand-logo-center { height: 80px; width: auto; border-radius: 14px; display: block; margin: 0 auto 2rem; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 0 1.25rem; }
@@ -441,12 +460,16 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">Thurr <span>Solutions</span></div>
+  <a href="#" class="nav-brand">
+    <span class="brand-right">Right</span>
+    <span class="brand-thurr">Thurr</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#projects">Work</a></li>
     <li><a href="#approach">Approach</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="services.html">For Businesses →</a></li>
   </ul>
   <a href="https://calendly.com/carrothers-therrance28" target="_blank" class="nav-cta">Book Free Audit →</a>
 </nav>
@@ -457,6 +480,9 @@
   <div class="hero-glow1"></div>
   <div class="hero-glow2"></div>
   <div class="hero-inner">
+    <div class="brand-logo-wrap">
+      <img src="logo-blue.png" alt="Right Thurr" class="brand-logo">
+    </div>
     <div class="available-badge">
       <span class="available-dot"></span>
       Available for new projects
@@ -696,7 +722,7 @@
       <div class="project-body">
         <div class="project-section">
           <h4>Business Problem</h4>
-          <p>A regional roofing contractor was manually copying client details into proposal templates, calculating pricing by hand, and emailing contracts individually. During storm season with 15–20 active inquiries per week, turnaround stretched to 24–48 hours — losing deals to faster competitors.</p>
+          <p>A regional roofing contractor was manually copying client details into proposal templates, calculating pricing by hand, and emailing contracts individually. During storm season with 15–20 active inquiries per week, turnaround stretched to 24–48 hours — and in roofing, the first company to get a branded proposal in the homeowner's hands wins the job. Slow proposals were costing them contracts.</p>
           <h4>Automated Process</h4>
           <div class="process-flow">
             <span class="flow-step">Job Intake</span><span class="flow-arrow">→</span>
@@ -871,6 +897,7 @@
 <section id="contact">
   <div class="section-inner">
     <div class="contact-wrap">
+      <img src="logo-orange.png" alt="Right Thurr" class="brand-logo-center">
       <div class="section-label" style="text-align:center">Let's Talk</div>
       <h2 class="section-title" style="text-align:center">Ready to Automate?</h2>
       <p class="section-sub" style="text-align:center;margin:0 auto 0">Book a free workflow audit — I'll identify exactly where automation delivers the most value for your business.</p>
@@ -880,7 +907,7 @@
           <div class="label">Book a Call</div>
           <div class="value">Free Workflow Audit</div>
         </a>
-        <a href="https://www.linkedin.com/in/therrance-carrothers-b8a201281" target="_blank" class="contact-card">
+        <a href="https://www.linkedin.com/in/therrancecarrothers" target="_blank" class="contact-card">
           <div class="icon">💼</div>
           <div class="label">LinkedIn</div>
           <div class="value">Therrance Carrothers</div>
@@ -893,7 +920,7 @@
       </div>
       <p class="contact-note">
         Houston, TX &amp; St. Louis, MO · Available remotely worldwide<br>
-        <a href="https://www.linkedin.com/in/therrance-carrothers-b8a201281" target="_blank">linkedin.com/in/therrancecarrothers</a>
+        <a href="https://www.linkedin.com/in/therrancecarrothers" target="_blank">linkedin.com/in/therrancecarrothers</a>
       </p>
     </div>
   </div>

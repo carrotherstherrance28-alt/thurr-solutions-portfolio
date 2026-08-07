@@ -1,0 +1,425 @@
+/* ============================================================
+   Thurr Solutions — built on _ControlPlane/BrandKit/STUDIO/DESIGN-SYSTEM.md
+   Ink leads. Clay is a single accent. Every spacing value is a multiple of 8.
+   ============================================================ */
+
+:root {
+  --ink: #16150f;
+  --paper: #faf9f5;
+  --clay: #f36b21;
+
+  --ink-72: rgba(22, 21, 15, 0.72);
+  --ink-62: rgba(22, 21, 15, 0.62);  /* 5.02:1 on paper — clears WCAG AA for 12px text */
+  --ink-14: rgba(22, 21, 15, 0.14);
+  --ink-06: rgba(22, 21, 15, 0.06);
+
+  --font: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --s1: 8px;  --s2: 16px; --s3: 24px; --s4: 32px;
+  --s6: 48px; --s8: 64px; --s12: 96px; --s16: 128px;
+
+  --measure: 36rem;               /* ~70ch */
+  --edge: clamp(24px, 6vw, 96px);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);   /* ease-out-expo */
+
+  --z-rail: 60;
+  --z-header: 50;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.1; font-weight: 600; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+ol { margin: 0; padding: 0; list-style: none; }
+
+/* ---------- type ---------- */
+.display {
+  font-size: clamp(38px, 6.4vw, 76px);
+  letter-spacing: -0.032em;
+  white-space: pre-line;
+}
+.display-sm { font-size: clamp(32px, 5vw, 56px); letter-spacing: -0.028em; }
+.h2 { font-size: clamp(27px, 3.8vw, 42px); letter-spacing: -0.022em; }
+.lede { font-size: clamp(18px, 2vw, 21px); color: var(--ink-72); max-width: var(--measure); }
+.prose { max-width: var(--measure); color: var(--ink-72); }
+.prose p + p { margin-top: var(--s3); }
+.caption { font-size: 13.5px; color: var(--ink-62); }
+
+/* The ONE kicker on the page. Brand, not section scaffolding. */
+.kicker {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-62);
+  display: flex; align-items: center; gap: var(--s2);
+  margin-bottom: var(--s4);
+}
+.kicker::after { content: ""; height: 1px; width: 56px; background: var(--clay); }
+
+/* ---------- layout ---------- */
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: var(--edge); }
+section { padding-block: clamp(80px, 11vw, 152px); }
+section + section { border-top: 1px solid var(--ink-14); }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: var(--z-header);
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ink-14);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-block: var(--s2);
+}
+/* Lockup minimum is 120px wide per brand-guidelines; height follows the ratio. */
+.site-header img { width: 132px; height: auto; display: block; }
+.site-nav { display: flex; align-items: center; gap: var(--s3); }
+.nav-link {
+  font-size: 15px; font-weight: 600; letter-spacing: -0.005em;
+  text-decoration: none; color: var(--ink-72);
+  transition: color 0.2s var(--ease);
+}
+.nav-link:hover { color: var(--ink); }
+/* Below 560px the label crowds the lockup; the CTA alone is the priority. */
+@media (max-width: 560px) { .nav-link { display: none; } }
+@media (max-width: 480px) { .site-header img { width: 120px; } }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  background: var(--ink); color: var(--paper);
+  padding: 14px var(--s3);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600; font-size: 15px; letter-spacing: -0.005em;
+  transition: transform 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+.btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-lg { padding: 18px var(--s4); font-size: 16px; }
+
+/* ---------- 1 hook ---------- */
+.hook { padding-block: clamp(88px, 16vh, 168px); border-top: none; }
+.hook .display { margin-bottom: var(--s4); max-width: 18ch; }
+.hook .lede { margin-bottom: var(--s6); font-size: clamp(19px, 2.3vw, 23px); }
+
+/* ---------- 2 cost ---------- */
+#cost .prose { margin-top: var(--s4); }
+.pull {
+  margin-top: var(--s8);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600; letter-spacing: -0.02em; line-height: 1.25;
+  max-width: 24ch;
+}
+.pull-note { margin-top: var(--s2); }
+
+/* ---------- 3 the route — signature interaction ---------- */
+.route { position: relative; margin-top: var(--s12); padding-left: 56px; }
+.route-track { position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; }
+.route-line { position: absolute; inset: 0; background: var(--ink-14); }
+.route-dot {
+  position: absolute; left: 50%; top: 0;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--clay);
+  translate: -50% -50%;
+  will-change: top;
+}
+.dot-label {
+  position: absolute; left: 20px; top: 50%; translate: 0 -50%;
+  white-space: nowrap;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--clay);
+  opacity: 0; transition: opacity 0.35s var(--ease);
+}
+.route-dot[data-stalled="true"] .dot-label { opacity: 1; }
+
+.stage {
+  padding-block: var(--s4);
+  border-bottom: 1px solid var(--ink-14);
+  opacity: 1;
+  transition: opacity 0.5s var(--ease);
+}
+.stage:first-child { border-top: 1px solid var(--ink-14); }
+.lens {
+  margin-top: var(--s3);
+  max-width: 46rem;
+  color: var(--ink-72);
+  font-size: 16px;
+  padding-top: var(--s3);
+  border-top: 1px solid var(--ink-14);
+}
+.stage-head { display: flex; align-items: baseline; gap: var(--s2); flex-wrap: wrap; }
+.stage .fn {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-62); margin-left: auto; white-space: nowrap;
+}
+@media (max-width: 560px) { .stage .fn { margin-left: 0; width: 100%; margin-top: 2px; } }
+.stage .n {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  color: var(--ink-62); font-variant-numeric: tabular-nums;
+}
+.stage .name { font-size: clamp(20px, 2.4vw, 25px); font-weight: 600; letter-spacing: -0.015em; }
+.stage .leak { margin-top: var(--s1); color: var(--ink-72); max-width: 46ch; }
+.stage[data-leak="true"] .name { color: var(--clay); }
+
+/* ---------- 4 process — a real sequence, so numbers earn it. Not cards. ---------- */
+.steps { margin-top: var(--s8); max-width: 46rem; }
+.step {
+  display: grid; grid-template-columns: 3.5rem 1fr; gap: var(--s3);
+  padding-block: var(--s4);
+  border-top: 1px solid var(--ink-14);
+  align-items: start;
+}
+.step:last-child { border-bottom: 1px solid var(--ink-14); }
+.step .n {
+  font-size: clamp(28px, 3.4vw, 38px); font-weight: 600;
+  letter-spacing: -0.03em; color: var(--ink-14);
+  font-variant-numeric: tabular-nums; line-height: 0.9;
+}
+.step .name { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+.step .body { margin-top: var(--s1); color: var(--ink-72); max-width: 44ch; }
+.honest {
+  margin-top: var(--s8);
+  font-size: clamp(20px, 2.6vw, 26px); font-weight: 600;
+  letter-spacing: -0.018em; line-height: 1.3; max-width: 28ch;
+}
+
+/* ---------- 5 proof — editorial rows, not a card grid ---------- */
+.proofs { margin-top: var(--s8); }
+.proof {
+  display: grid; grid-template-columns: 1fr minmax(0, 1.6fr);
+  gap: var(--s3) var(--s6);
+  padding-block: var(--s6);
+  border-top: 1px solid var(--ink-14);
+}
+.proof:last-child { border-bottom: 1px solid var(--ink-14); }
+@media (max-width: 760px) { .proof { grid-template-columns: 1fr; gap: var(--s2); } }
+.proof .title { font-size: clamp(21px, 2.4vw, 26px); font-weight: 600; letter-spacing: -0.018em; }
+.proof .client { margin-top: var(--s1); font-size: 13.5px; color: var(--ink-62); }
+.proof .body { color: var(--ink-72); max-width: 52ch; }
+.proof .status {
+  margin-top: var(--s2); display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-62);
+}
+.proof .status::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ink-14);
+}
+.proof[data-live="true"] .status::before { background: var(--clay); }
+
+/* ---------- 5b range — definition rows, deliberately not cards ---------- */
+.range { margin-top: var(--s8); margin-bottom: 0; }
+.range-row {
+  display: grid; grid-template-columns: minmax(180px, 15rem) 1fr;
+  gap: var(--s3) var(--s6);
+  padding-block: var(--s4);
+  border-top: 1px solid var(--ink-14);
+}
+.range-row:last-child { border-bottom: 1px solid var(--ink-14); }
+@media (max-width: 760px) { .range-row { grid-template-columns: 1fr; gap: var(--s1); } }
+.range-name { font-size: 19px; font-weight: 600; letter-spacing: -0.012em; margin: 0; }
+.range-body { margin: 0; color: var(--ink-72); max-width: 52ch; }
+.range-close {
+  margin-top: var(--s8);
+  font-size: clamp(19px, 2.4vw, 24px); font-weight: 600;
+  letter-spacing: -0.016em; line-height: 1.3; max-width: 30ch;
+}
+
+/* ---------- 6 who ---------- */
+.who-grid {
+  display: grid; gap: var(--s8);
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  align-items: start;
+}
+@media (max-width: 760px) { .who-grid { grid-template-columns: 1fr; gap: var(--s6); } }
+.portrait {
+  aspect-ratio: 4 / 5; width: 100%;
+  border: 1px solid var(--ink-14); border-radius: 4px;
+  background: var(--ink-06);
+  display: grid; place-items: center; text-align: center;
+  overflow: hidden;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait .ph { padding: var(--s3); }
+.pledge {
+  margin-top: var(--s6);
+  font-size: clamp(20px, 2.6vw, 26px); font-weight: 600;
+  letter-spacing: -0.018em; line-height: 1.3; max-width: 24ch;
+}
+
+/* ---------- 7 book ---------- */
+.book .lede { margin-top: var(--s3); }
+.book .btn { margin-top: var(--s8); }
+.book .reassure { margin-top: var(--s3); }
+
+/* ---------- footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--ink-14);
+  padding-block: var(--s6);
+  font-size: 14px; color: var(--ink-62);
+}
+.site-footer .wrap {
+  display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6);
+  justify-content: space-between;
+}
+
+/* ============================================================
+   MOTION
+   Reveals ENHANCE an already-visible default: nothing is gated on
+   a class unless the script is alive, so a throttled tab or a
+   headless render still ships the full page. Entrances differ by
+   what they reveal — a uniform fade-up everywhere is the tell.
+   ============================================================ */
+
+.motion .r-fade { opacity: 0; transform: translateY(14px); }
+.motion .r-fade.in {
+  opacity: 1; transform: none;
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+
+/* Stages never fade — the travelling dot is their motion. */
+.motion .stage { opacity: 0.45; }
+.motion .stage[data-seen="true"] { opacity: 1; }
+
+/* Steps stagger within their own list. */
+.motion .step { opacity: 0; transform: translateY(10px); }
+.motion .step.in {
+  opacity: 1; transform: none;
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* Proof rows crossfade rather than slide. */
+.motion .proof { opacity: 0; }
+.motion .proof.in { opacity: 1; transition: opacity 0.6s var(--ease); }
+
+.rail {
+  position: fixed; left: 0; top: 0; height: 2px; width: 100%;
+  background: var(--clay); z-index: var(--z-rail);
+  transform: scaleX(0); transform-origin: 0 50%;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion .r-fade,
+  .motion .step,
+  .motion .proof { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .motion .stage { opacity: 1 !important; }
+  .route-dot, .rail { display: none; }
+}
+
+/* ============================================================
+   CONSULT PAGE
+   ============================================================ */
+.consult-page { padding-block: clamp(56px, 9vw, 104px); }
+.consult-mark { display: block; margin-bottom: var(--s6); }
+.consult-page .display-sm { max-width: 14ch; }
+.consult-page .lede { margin-top: var(--s3); }
+
+.consult-form { margin-top: var(--s12); max-width: 34rem; }
+.field { margin-bottom: var(--s6); border: 0; padding: 0; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+@media (max-width: 560px) { .field-row { grid-template-columns: 1fr; gap: 0; } }
+
+.label {
+  display: block; margin-bottom: var(--s1);
+  font-size: 15px; font-weight: 600; letter-spacing: -0.005em;
+  padding: 0;
+}
+.optional { font-weight: 400; color: var(--ink-62); }
+.hint { font-size: 14px; color: var(--ink-62); margin-bottom: var(--s2); max-width: 46ch; }
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%; font: inherit; font-size: 16px; color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--ink-14); border-radius: 6px;
+  padding: 12px var(--s2);
+  transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+input::placeholder, textarea::placeholder { color: var(--ink-62); }
+input:focus-visible, textarea:focus-visible {
+  outline: none; border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(243, 107, 33, 0.22);
+}
+textarea { resize: vertical; min-height: 84px; }
+
+/* duration — a segmented choice, not a card grid */
+.choices { display: grid; }
+.choice {
+  display: flex; align-items: flex-start; gap: var(--s2);
+  padding: var(--s3);
+  border: 1px solid var(--ink-14);
+  cursor: pointer;
+  transition: background 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.choice:first-of-type { border-radius: 6px 6px 0 0; }
+.choice:last-of-type { border-radius: 0 0 6px 6px; }
+.choice + .choice { border-top: 0; }
+.choice:hover { background: var(--ink-06); }
+.choice input { margin-top: 3px; accent-color: var(--clay); width: 17px; height: 17px; }
+.choice-body { display: block; }
+.choice-time { display: block; font-weight: 600; font-size: 17px; }
+.choice-note { display: block; font-size: 14px; color: var(--ink-72); margin-top: 2px; }
+.choice:has(input:checked) { border-color: var(--ink); background: var(--ink-06); }
+.choice:has(input:checked) + .choice { border-top-color: var(--ink); }
+.choice:has(input:focus-visible) { box-shadow: 0 0 0 3px rgba(243, 107, 33, 0.22); }
+
+.form-note { margin-top: var(--s3); max-width: 42ch; }
+.hp { position: absolute; left: -9999px; }
+
+/* thanks page */
+.thanks { padding-block: clamp(88px, 16vh, 176px); }
+.thanks .lede { margin-top: var(--s3); }
+.thanks .btn { margin-top: var(--s8); }
+
+/* booking — Google appointment schedule when configured, form until then */
+.booking-slot { margin-top: var(--s12); }
+.booking-frame {
+  width: 100%; min-height: 640px; border: 1px solid var(--ink-14);
+  border-radius: 6px; background: var(--paper);
+}
+@media (max-width: 560px) { .booking-frame { min-height: 720px; } }
+
+/* booking options — one page, one link per length */
+.booking-intro { margin-top: var(--s6); }
+.booking-options { margin-top: var(--s6); }
+.booking-option {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  align-items: center; gap: var(--s3);
+  padding: var(--s4) var(--s3);
+  border: 1px solid var(--ink-14);
+  text-decoration: none; color: inherit;
+  transition: background 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.booking-option:first-child { border-radius: 6px 6px 0 0; }
+.booking-option:last-child { border-radius: 0 0 6px 6px; }
+.booking-option + .booking-option { border-top: 0; }
+.booking-option:hover, .booking-option:focus-visible {
+  background: var(--ink-06); border-color: var(--ink); outline: none;
+}
+.booking-option:hover + .booking-option { border-top-color: var(--ink); }
+.booking-time { font-size: 19px; font-weight: 600; letter-spacing: -0.012em; }
+.booking-note { color: var(--ink-72); font-size: 15px; }
+.booking-go { font-size: 14px; font-weight: 600; color: var(--ink-62); white-space: nowrap; }
+.booking-option:hover .booking-go { color: var(--ink); }
+.booking-option[data-recommended="true"] .booking-time { color: var(--clay); }
+.booking-option[data-pending="true"] { cursor: pointer; }
+@media (max-width: 560px) {
+  .booking-option { grid-template-columns: 1fr; gap: var(--s1); padding: var(--s3); }
+  .booking-go { margin-top: var(--s1); }
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a consult — Thurr Solutions</title>
+<meta name="description" content="A short call to walk your lead route and find where it breaks. Pick a length, tell me when you're free, and I'll send a Google Meet link.">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" aria-label="Thurr Solutions home">
+      <img src="assets/lockup-horizontal.svg" alt="Thurr Solutions">
+    </a>
+    <a class="nav-link" href="/">Back to site</a>
+  </div>
+</header>
+
+<main class="consult-page">
+  <div class="wrap">
+
+    <img class="consult-mark" src="assets/mark-primary.svg" alt="" width="56" height="56">
+
+    <h1 class="display-sm">Book a consult</h1>
+    <p class="lede">
+      We walk your lead route and find where it breaks. If there's something worth
+      building, we scope it. If there isn't, you'll know before spending a dollar.
+    </p>
+
+    <div id="google-booking" class="booking-slot" hidden></div>
+
+    <form
+      id="fallback-form"
+      class="consult-form"
+      name="consult"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="company-website"
+      action="/consult-thanks.html"
+    >
+      <input type="hidden" name="form-name" value="consult">
+      <p class="hp"><label>Leave this empty <input name="company-website" tabindex="-1"></label></p>
+
+      <fieldset class="field">
+        <legend class="label">How long do you need?</legend>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="duration" value="15 minutes" required>
+            <span class="choice-body">
+              <span class="choice-time">15 min</span>
+              <span class="choice-note">A quick question or a gut check</span>
+            </span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="duration" value="30 minutes" checked>
+            <span class="choice-body">
+              <span class="choice-time">30 min</span>
+              <span class="choice-note">Walk the lead route end to end — most people pick this</span>
+            </span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="duration" value="45 minutes">
+            <span class="choice-body">
+              <span class="choice-time">45 min</span>
+              <span class="choice-note">Route plus scoping a build</span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label class="label" for="times">What times work for you?</label>
+        <p class="hint" id="availability-hint">I'm available <strong>9am to 9pm Central, any day</strong>. Give me two or three options and I'll confirm one.</p>
+        <textarea id="times" name="preferred_times" rows="3" required
+          placeholder="e.g. Tuesday after 6pm, or Thursday morning before 11"></textarea>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label class="label" for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label class="label" for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="business">What do you do? <span class="optional">optional</span></label>
+        <input id="business" name="business" type="text" placeholder="Roofing, salon, real estate, nonprofit…">
+      </div>
+
+      <div class="field">
+        <label class="label" for="context">Anything I should know first? <span class="optional">optional</span></label>
+        <textarea id="context" name="context" rows="3"
+          placeholder="Where you think leads are going cold, or what you're trying to build."></textarea>
+      </div>
+
+      <button class="btn btn-lg" type="submit">Request this time</button>
+      <p class="caption form-note">
+        I'll reply with a Google Meet link and a confirmed time. No pitch deck, and no
+        retainer talk on the first call.
+      </p>
+    </form>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Thurr Solutions LLC</span>
+    <a href="mailto:therrance@thurrsolutions.com">therrance@thurrsolutions.com</a>
+  </div>
+</footer>
+
+<script type="module" src="consult.js"></script>
+</body>
+</html>

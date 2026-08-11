@@ -76,7 +76,25 @@ ol { margin: 0; padding: 0; list-style: none; }
 .kicker::after { content: ""; height: 1px; width: 56px; background: var(--clay); }
 
 /* ---------- layout ---------- */
-.wrap { max-width: 1080px; margin: 0 auto; padding-inline: var(--edge); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: var(--edge); position: relative; }
+
+/* Editorial device 1 (marginal metadata), per BrandKit/STUDIO/REFERENCE-EDITORIAL.md.
+   It sits in the GUTTER, never above the h2 — a tracked-caps line stacked over every
+   heading is the section eyebrow the system bans outright. The number is the only
+   thing here; the h2 already carries the label, so repeating it would be decoration.
+   Enhancement only: below 1280px there is no real margin to sit in, so it is not
+   rendered at all rather than folded into the content column. */
+.sec-index {
+  display: none;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+  color: var(--ink-62); font-variant-numeric: tabular-nums;
+}
+@media (min-width: 1280px) {
+  .sec-index {
+    display: block;
+    position: absolute; left: 0; top: 0.55em;
+  }
+}
 section { padding-block: clamp(80px, 11vw, 152px); }
 section + section { border-top: 1px solid var(--ink-14); }
 

@@ -307,6 +307,26 @@
         letter-spacing: 0.02em;
       }
 
+      /* Editorial device 1 (marginal metadata) + device 6 (real spec furniture),
+         per BrandKit/STUDIO/REFERENCE-EDITORIAL.md. Every value here is true and
+         checkable — series, revision, entity. No barcode, no invented issue number:
+         decoration pretending to be information is exactly what device 6 rules out. */
+      .colophon {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 16px 0 0;
+        padding-top: 12px;
+        border-top: 1px solid var(--line);
+        color: var(--dim);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        line-height: 1.4;
+        text-transform: uppercase;
+        font-variant-numeric: tabular-nums;
+      }
+
       .netlify-hidden {
         display: none;
       }
@@ -393,6 +413,10 @@
             before they're loud about it.
           </p>
           <p class="legal">Thurr Solutions LLC &middot; Houston &amp; St. Louis</p>
+          <p class="colophon">
+            <span>Identity series 001</span>
+            <span>Rev 2026&#8209;08</span>
+          </p>
         </footer>
       </article>
     </main>

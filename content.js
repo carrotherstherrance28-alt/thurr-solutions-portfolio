@@ -31,31 +31,37 @@ export const content = {
     ctaHref: "/consult.html",
   },
 
-  // 1 — THE HOOK. Their problem, their words. No jargon.
+  // 1 — THE HOOK. Says the category first, in the boilerplate's own words, so a
+  // stranger knows what this company is before they know anything else.
   hook: {
-    headline: "A lead texted you at 7pm.\nYou saw it at 9.",
+    // No forced break — `text-wrap: balance` splits this better at every width
+    // than a hard \n, which orphaned "Brands, and" on a phone.
+    headline: "Brands, and the sites they live on.",
     kicker: "Thurr Solutions",  // the ONE kicker on the page — brand, not scaffolding
-    sub: "They already booked someone else. Not because you're worse — because someone answered first.",
+    sub: "Built for owners who need it to sell, not just look finished. The work starts by finding where you're losing people — then designing against that.",
     cta: "Book a consult",
   },
 
-  // 2 — THE COST. Why it happens.
+  // 2 — THE COST. Why most brand and web work disappoints, and the promise that
+  // fixes it. This is where the tagline earns its place — marketing copy, not the
+  // lockup, per the brand guidelines.
   cost: {
-    headline: "Nobody loses a lead on purpose.",
+    headline: "Most of it looks finished and still doesn't sell.",
     body: [
-      "You were on a job. The phone was in your pocket. The text came in while your hands were full, and by the time you sat down it was three hours old.",
-      "That gap is where most local businesses lose work — not in the pitch, not in the price. In the hours between someone raising their hand and someone answering.",
+      "A new logo, a new site, and three months later the same number of people are calling. The work wasn't bad. It just wasn't aimed at anything.",
+      "Design decides how a thing looks. It can't decide what you're selling, who you're selling it to, or which step is quietly losing them. That gets settled first, or it gets settled by accident.",
     ],
     stat: {
-      figure: "The first business to respond wins most of the time.",
-      note: "Not the cheapest. Not the best reviewed. The first.",
+      figure: "Direction, then design.",
+      note: "In that order. The second part gets easy once the first one is settled.",
     },
   },
 
-  // 3 — THE MAP. Revealed one stage at a time on scroll.
+  // 3 — THE MAP. The direction half, made concrete. Revealed one stage at a time
+  // on scroll — this is the signature interaction and the differentiator.
   map: {
-    headline: "Five places a lead can go cold.",
-    sub: "Most owners can name the leak the moment they see the route drawn out. That's the whole first conversation.",
+    headline: "Before anything gets drawn, we find the leak.",
+    sub: "Five places a business loses the people it already earned. Most owners can name theirs the moment they see the route drawn out — and that is the whole first conversation.",
     lens: "Three functions cover the route — growth and marketing bring leads in, engineering makes sure none are dropped, sales turns them into booked work. One pipeline, not three departments.",
     stages: [
       {
@@ -108,7 +114,7 @@ export const content = {
       {
         n: "03",
         name: "I build the smallest fix",
-        body: "Not a platform. The one narrow system that closes the leak that's costing you most.",
+        body: "Sometimes that's the identity and the site it lives on. Sometimes it's one narrow system behind them. Never a platform you didn't ask for.",
       },
       {
         n: "04",
@@ -148,8 +154,8 @@ export const content = {
 
   // 5b — RANGE. Shown through what exists, not claimed as a services list.
   range: {
-    headline: "The leak map is the door, not the whole house.",
-    sub: "Once the route is clear, this is what usually comes next. Every line below is something I have already built and can show you — not a menu.",
+    headline: "What I build.",
+    sub: "Brand and websites are the spine of it. Everything under them exists because a client needed it. Every line below is something I have already built and can show you — not a menu.",
     items: [
       {
         name: "Brand and identity",
@@ -177,7 +183,7 @@ export const content = {
       },
     ],
     close:
-      "Most of it starts the same way: a call about where the leads are going, then the smallest useful build.",
+      "Most of it starts the same way: one call about where the business is actually losing people, then the smallest useful build.",
   },
 
   // 6 — WHO. Swap `photo` to a real path when the shoot happens.
@@ -194,8 +200,8 @@ export const content = {
 
   // 7 — THE ASK.
   book: {
-    headline: "Start with the leak map.",
-    body: "A short call. We walk your lead route and find where it breaks. If there's something worth building, we scope it. If there isn't, you'll know that before spending a dollar.",
+    headline: "Start with one call.",
+    body: "We walk the route and find where it breaks. If there's something worth building — an identity, a site, a system behind them — we scope it. If there isn't, you'll know that before spending a dollar.",
     cta: "Book a consult",
     ctaHref: "/consult.html",
     reassure: "No pitch deck. No retainer talk on the first call.",

@@ -202,6 +202,10 @@ export const content = {
   },
 
   footer: {
+    // Boilerplate is fixed brand copy — see BrandKit/identity-series-001/brand-guidelines.md,
+    // "Verbal identity". Reword it there first, not here.
+    boiler:
+      "Thurr Solutions is a brand and web studio. We build identity systems and the sites they live on, for owners who need to be clear about where they're going before they're loud about it.",
     line: "Thurr Solutions LLC",
     email: "therrance@thurrsolutions.com",
     note: "Consult-first. No guaranteed outcomes — just a clear route and an honest read.",

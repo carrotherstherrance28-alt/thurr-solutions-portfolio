@@ -269,13 +269,27 @@ section + section { border-top: 1px solid var(--ink-14); }
 /* ---------- footer ---------- */
 .site-footer {
   border-top: 1px solid var(--ink-14);
-  padding-block: var(--s6);
+  padding-block: var(--s8);
   font-size: 14px; color: var(--ink-62);
 }
-.site-footer .wrap {
-  display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6);
-  justify-content: space-between;
+/* 232px clears the 200px descriptor minimum in brand-guidelines. The header
+   lockup is 132px, which is why the header uses the base lockup instead. */
+.footer-mark { width: 232px; height: auto; display: block; }
+.footer-boiler {
+  margin-top: var(--s3);
+  max-width: 52ch;
+  color: var(--ink-72);
+  font-size: 15px;
 }
+.footer-meta {
+  display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6);
+  justify-content: space-between; align-items: baseline;
+  margin-top: var(--s6);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--ink-14);
+}
+.footer-meta a { color: var(--ink-72); text-decoration: none; }
+.footer-meta a:hover { color: var(--ink); }
 
 /* ============================================================
    MOTION

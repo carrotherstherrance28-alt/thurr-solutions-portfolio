@@ -137,6 +137,7 @@ $("#nav-cta").textContent = C.nav.cta;
 // footer
 {
   const f = C.footer;
+  $("#f-boiler").textContent = f.boiler;
   $("#f-line").textContent = f.line;
   const mail = $("#f-email");
   mail.textContent = f.email;

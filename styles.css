@@ -76,25 +76,14 @@ ol { margin: 0; padding: 0; list-style: none; }
 .kicker::after { content: ""; height: 1px; width: 56px; background: var(--clay); }
 
 /* ---------- layout ---------- */
-.wrap { max-width: 1080px; margin: 0 auto; padding-inline: var(--edge); position: relative; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: var(--edge); }
 
-/* Editorial device 1 (marginal metadata), per BrandKit/STUDIO/REFERENCE-EDITORIAL.md.
-   It sits in the GUTTER, never above the h2 — a tracked-caps line stacked over every
-   heading is the section eyebrow the system bans outright. The number is the only
-   thing here; the h2 already carries the label, so repeating it would be decoration.
-   Enhancement only: below 1280px there is no real margin to sit in, so it is not
-   rendered at all rather than folded into the content column. */
-.sec-index {
-  display: none;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
-  color: var(--ink-62); font-variant-numeric: tabular-nums;
-}
-@media (min-width: 1280px) {
-  .sec-index {
-    display: block;
-    position: absolute; left: 0; top: 0.55em;
-  }
-}
+/* No per-section index in the gutter. It was built and then cut: numbering every
+   section is the eyebrow trope one tier deeper, and the page already carries the
+   only numbers that earn their place — 01–04 on the process steps, where the
+   order genuinely IS the information. Two numbering schemes on one page is worse
+   than none. Marginal metadata (REFERENCE-EDITORIAL device 1) still belongs on
+   proposal covers, deck dividers and invoices; it did not belong here. */
 section { padding-block: clamp(80px, 11vw, 152px); }
 section + section { border-top: 1px solid var(--ink-14); }
 

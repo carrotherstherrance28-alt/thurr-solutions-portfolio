@@ -154,6 +154,9 @@ section + section { border-top: 1px solid var(--ink-14); }
   transition: opacity 0.5s var(--ease);
 }
 .stage:first-child { border-top: 1px solid var(--ink-14); }
+/* Editorial device 5 — the margin note. Stacked by default so narrow screens and
+   any layout failure still read top-to-bottom; the two-column spread is an
+   enhancement that only applies where there is genuinely room for it. */
 .lens {
   margin-top: var(--s3);
   max-width: 46rem;
@@ -161,6 +164,22 @@ section + section { border-top: 1px solid var(--ink-14); }
   font-size: 16px;
   padding-top: var(--s3);
   border-top: 1px solid var(--ink-14);
+}
+@media (min-width: 1040px) {
+  .route-spread {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    gap: var(--s8);
+    align-items: start;
+  }
+  .route-spread .lens {
+    margin-top: var(--s12);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-62);
+    position: sticky;
+    top: 96px;   /* clears the sticky header */
+  }
 }
 .stage-head { display: flex; align-items: baseline; gap: var(--s2); flex-wrap: wrap; }
 .stage .fn {

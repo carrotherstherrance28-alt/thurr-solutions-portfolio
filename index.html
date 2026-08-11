@@ -63,14 +63,19 @@
     <div class="wrap">
       <h2 class="h2 r-fade"></h2>
       <p class="lede r-fade" id="map-sub"></p>
-      <p class="lens r-fade" id="map-lens"></p>
 
+      <!-- Editorial device 5, per BrandKit/STUDIO/REFERENCE-EDITORIAL.md: the lens
+           runs as a margin note beside the route on wide screens, and falls back
+           above it on narrow ones. -->
+      <div class="route-spread">
       <div class="route" id="route">
         <div class="route-track" aria-hidden="true">
           <div class="route-line"></div>
           <div class="route-dot" id="dot"><span class="dot-label" id="dot-label"></span></div>
         </div>
         <ol class="stages" id="stages"></ol>
+      </div>
+        <aside class="lens r-fade" id="map-lens"></aside>
       </div>
     </div>
   </section>

@@ -6,9 +6,9 @@
 
 export const content = {
   meta: {
-    title: "Thurr Solutions — leads stop leaking between the text and the booking",
+    title: "Thurr Solutions, brand and web studio",
     description:
-      "Consult-first build partner for local service businesses. I map where leads slip between first contact and booked appointment, then build the smallest system that fixes it.",
+      "We build identity systems and the sites they live on, for owners who need it to sell rather than just look finished. Consult first: we find where the business is losing people, then design against that.",
     url: "https://thurrsolutions.com",
   },
 
@@ -21,7 +21,7 @@ export const content = {
     availability: "9am to 9pm Central, any day",
     options: [
       { label: "15 min", note: "A quick question or a gut check", url: null },
-      { label: "30 min", note: "Walk the lead route end to end — most people pick this", url: "https://calendar.app.google/oeuhvW3zAonDHoC49", recommended: true },
+      { label: "30 min", note: "Walk the lead route end to end. Most people pick this", url: "https://calendar.app.google/oeuhvW3zAonDHoC49", recommended: true },
       { label: "45 min", note: "Route plus scoping a build", url: null },
     ],
   },
@@ -38,7 +38,7 @@ export const content = {
     // than a hard \n, which orphaned "Brands, and" on a phone.
     headline: "Brands, and the sites they live on.",
     kicker: "Thurr Solutions",  // the ONE kicker on the page — brand, not scaffolding
-    sub: "Built for owners who need it to sell, not just look finished. The work starts by finding where you're losing people — then designing against that.",
+    sub: "Built for owners who need it to sell, not just look finished. The work starts by finding where you're losing people, then designing against that.",
     cta: "Book a consult",
   },
 
@@ -61,8 +61,8 @@ export const content = {
   // on scroll — this is the signature interaction and the differentiator.
   map: {
     headline: "Before anything gets drawn, we find the leak.",
-    sub: "Five places a business loses the people it already earned. Most owners can name theirs the moment they see the route drawn out — and that is the whole first conversation.",
-    lens: "Three functions cover the route — growth and marketing bring leads in, engineering makes sure none are dropped, sales turns them into booked work. One pipeline, not three departments.",
+    sub: "Five places a business loses the people it already earned. Most owners can name theirs the moment they see the route drawn out, and that is the whole first conversation.",
+    lens: "Three functions cover the route. Growth and marketing bring leads in, engineering makes sure none are dropped, sales turns them into booked work. One pipeline, not three departments.",
     stages: [
       {
         n: "01",
@@ -74,7 +74,7 @@ export const content = {
         n: "02",
         name: "Intake",
         fn: "Engineering",
-        leak: "The message arrives somewhere nobody is watching — a DM, a form, a missed call.",
+        leak: "The message arrives somewhere nobody is watching: a DM, a form, a missed call.",
       },
       {
         n: "03",
@@ -104,7 +104,7 @@ export const content = {
       {
         n: "01",
         name: "We talk",
-        body: "Your current lead path, your response habits, your tools — and where automation should stay out of the way.",
+        body: "Your current lead path, your response habits, your tools, and where automation should stay out of the way.",
       },
       {
         n: "02",
@@ -123,28 +123,28 @@ export const content = {
       },
     ],
     honest:
-      "If the route isn't worth building on yet, I'll tell you that on the call — before you spend anything.",
+      "If the route isn't worth building on yet, I'll tell you that on the call, before you spend anything.",
   },
 
   // 5 — PROOF. Real artifacts. Add new ones here.
   proof: {
     headline: "No borrowed logos. Here's what I've built.",
-    sub: "Real projects, described plainly. Some are live, some are in progress — labelled either way.",
+    sub: "Real projects, described plainly. Some are live, some are in progress, labelled either way.",
     items: [
       {
-        client: "Real estate — listing marketing",
+        client: "Real estate · listing marketing",
         title: "Listing film engine",
         body: "A system that turns a folder of listing photos into a finished walkthrough film, a vertical social cut, and a print postcard. Built for one agent, reusable for any listing.",
         status: "Live",
       },
       {
-        client: "Nonprofit — HeartPathBloom",
+        client: "Nonprofit · HeartPathBloom",
         title: "Story platform and brand system",
         body: "A full web app with a consent-gated story page, a complete brand system, and a publication workflow that cannot publish anything without written approval on file.",
         status: "Delivered",
       },
       {
-        client: "Real estate — multi-agent firm",
+        client: "Real estate · multi-agent firm",
         title: "Response-time audit",
         body: "A tool that measures how fast a team actually answers inbound leads, and shows the owner where the hours go. Tested, with a hard gate so no sample data can ever be sent as real.",
         status: "In progress",
@@ -155,7 +155,7 @@ export const content = {
   // 5b — RANGE. Shown through what exists, not claimed as a services list.
   range: {
     headline: "What I build.",
-    sub: "Brand and websites are the spine of it. Everything under them exists because a client needed it. Every line below is something I have already built and can show you — not a menu.",
+    sub: "Brand and websites are the spine of it. Everything under them exists because a client needed it. Every line below is something I have already built and can show you. Not a menu.",
     items: [
       {
         name: "Brand and identity",
@@ -163,7 +163,7 @@ export const content = {
       },
       {
         name: "Websites",
-        body: "Sites that load fast, read clearly, and can be edited without a developer. This one is an example — the words live in a data file, not the markup.",
+        body: "Sites that load fast, read clearly, and can be edited without a developer. This one is an example: the words live in a data file, not the markup.",
       },
       {
         name: "Marketing that produces itself",
@@ -179,7 +179,7 @@ export const content = {
       },
       {
         name: "Leverage",
-        body: "The systems behind all of it — automation, agents, and reporting that keep running when nobody is watching them.",
+        body: "The systems behind all of it: automation, agents, and reporting that keep running when nobody is watching them.",
       },
     ],
     close:
@@ -193,7 +193,7 @@ export const content = {
     photo: null, // e.g. "assets/therrance.jpg" — placeholder renders until set
     body: [
       "You work with me directly. There's no account manager, no handoff to a junior, and no one on the call who wasn't in the build.",
-      "When a project needs a specialist I don't happen to be — a particular kind of media work, a niche integration — I bring in someone I trust and stay accountable for the result. You get the range without paying for an agency's overhead.",
+      "When a project needs a specialist I don't happen to be, whether that's a particular kind of media work or a niche integration, I bring in someone I trust and stay accountable for the result. You get the range without paying for an agency's overhead.",
     ],
     pledge: "One person who knows your build, start to finish.",
   },
@@ -201,7 +201,7 @@ export const content = {
   // 7 — THE ASK.
   book: {
     headline: "Start with one call.",
-    body: "We walk the route and find where it breaks. If there's something worth building — an identity, a site, a system behind them — we scope it. If there isn't, you'll know that before spending a dollar.",
+    body: "We walk the route and find where it breaks. If there's something worth building, whether that's an identity, a site, or a system behind them, we scope it. If there isn't, you'll know that before spending a dollar.",
     cta: "Book a consult",
     ctaHref: "/consult.html",
     reassure: "No pitch deck. No retainer talk on the first call.",
@@ -214,6 +214,6 @@ export const content = {
       "Thurr Solutions is a brand and web studio. We build identity systems and the sites they live on, for owners who need to be clear about where they're going before they're loud about it.",
     line: "Thurr Solutions LLC",
     email: "therrance@thurrsolutions.com",
-    note: "Consult-first. No guaranteed outcomes — just a clear route and an honest read.",
+    note: "Consult-first. No guaranteed outcomes, just a clear route and an honest read.",
   },
 };

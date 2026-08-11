@@ -108,7 +108,9 @@ $("#nav-cta").textContent = C.nav.cta;
     img.alt = c.name;
     port.append(img);
   } else {
-    port.append(el("div", "ph caption", "Portrait — set who.photo in content.js"));
+    // No portrait yet: render a neutral plate rather than a note to the developer.
+    // A brand studio's own site must never ship a TODO to the visitor.
+    port.append(el("div", "ph"));
   }
   const body = $("#who-body");
   const name = el("h2", "h2 r-fade", c.name);
@@ -159,7 +161,12 @@ if (!reduced) {
   document.documentElement.classList.add("motion");
 
   const targets = $$(".r-fade, .step, .proof");
+  const revealAll = () => targets.forEach((n) => n.classList.add("in"));
 
+  // Registered BEFORE the observer is constructed. If IntersectionObserver is
+  // missing or throws, the catch reveals everything immediately — the reveal must
+  // never be able to leave the page blank.
+  if (!("IntersectionObserver" in window)) { revealAll(); } else try {
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
@@ -173,9 +180,8 @@ if (!reduced) {
   );
   targets.forEach((n) => io.observe(n));
 
-  setTimeout(() => {
-    if (!document.querySelector(".r-fade.in")) targets.forEach((n) => n.classList.add("in"));
-  }, 2500);
+  setTimeout(() => { if (!document.querySelector(".r-fade.in")) revealAll(); }, 2500);
+  } catch { revealAll(); }
 
   /* ---------- signature interaction ----------
      A lead travels the route as you scroll and STALLS at follow-up:

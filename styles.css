@@ -7,6 +7,11 @@
   --ink: #16150f;
   --paper: #faf9f5;
   --clay: #f36b21;
+  /* Clay is 2.87:1 on paper — it fails AA at every text size. --clay stays the
+     fill, mark and rule colour; --clay-text is the only clay allowed to BE text
+     on paper (5.70:1). On an ink plate the reverse holds: --clay reads 6.04:1
+     there and --clay-text drops to 3.05:1, so do not swap these on dark. */
+  --clay-text: #A8440B;
 
   --ink-72: rgba(22, 21, 15, 0.72);
   --ink-62: rgba(22, 21, 15, 0.62);  /* 5.02:1 on paper — clears WCAG AA for 12px text */
@@ -142,7 +147,7 @@ section + section { border-top: 1px solid var(--ink-14); }
   position: absolute; left: 20px; top: 50%; translate: 0 -50%;
   white-space: nowrap;
   font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
-  color: var(--clay);
+  color: var(--clay-text);
   opacity: 0; transition: opacity 0.35s var(--ease);
 }
 .route-dot[data-stalled="true"] .dot-label { opacity: 1; }
@@ -193,7 +198,7 @@ section + section { border-top: 1px solid var(--ink-14); }
 }
 .stage .name { font-size: clamp(20px, 2.4vw, 25px); font-weight: 600; letter-spacing: -0.015em; }
 .stage .leak { margin-top: var(--s1); color: var(--ink-72); max-width: 46ch; }
-.stage[data-leak="true"] .name { color: var(--clay); }
+.stage[data-leak="true"] .name { color: var(--clay-text); }
 
 /* ---------- 4 process — a real sequence, so numbers earn it. Not cards. ---------- */
 .steps { margin-top: var(--s8); max-width: 46rem; }
@@ -450,7 +455,7 @@ textarea { resize: vertical; min-height: 84px; }
 .booking-note { color: var(--ink-72); font-size: 15px; }
 .booking-go { font-size: 14px; font-weight: 600; color: var(--ink-62); white-space: nowrap; }
 .booking-option:hover .booking-go { color: var(--ink); }
-.booking-option[data-recommended="true"] .booking-time { color: var(--clay); }
+.booking-option[data-recommended="true"] .booking-time { color: var(--clay-text); }
 .booking-option[data-pending="true"] { cursor: pointer; }
 @media (max-width: 560px) {
   .booking-option { grid-template-columns: 1fr; gap: var(--s1); padding: var(--s3); }

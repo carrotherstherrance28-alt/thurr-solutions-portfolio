@@ -3,71 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thurr Solutions · brand and web studio</title>
-<meta name="description" content="We build identity systems and the sites they live on, for owners who need it to sell rather than just look finished. Consult first: we find where the business is losing people, then design against that.">
+<title>Thurr Solutions · brand, web and automation studio</title>
+<meta name="description" content="We build identity systems, the sites they live on, and the systems behind them. Consult first: we find where the business is losing people, then design against that.">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
 <meta property="og:title" content="Thurr Solutions">
-<meta property="og:description" content="Brands, and the sites they live on. Built for owners who need it to sell, not just look finished.">
+<meta property="og:description" content="Direction, then design. Brands, the sites they live on, and the systems behind them.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thurrsolutions.com">
+<meta name="theme-color" content="#16150F">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="rail" id="rail" aria-hidden="true"></div>
+<a class="skip" href="#top">Skip to content</a>
+
+<!-- The mark travels the left edge as you scroll, and the section waypoints
+     light as it passes them. Both are decorative; the page reads without them. -->
+<div class="rail" aria-hidden="true"><div class="rail-fill" id="rail-fill"></div></div>
+<svg class="rail-mark" id="rail-mark" viewBox="0 0 112 112" aria-hidden="true">
+  <g stroke="#D9552B" stroke-width="13" fill="none"><path d="M18 22H86"/><path d="M52 22v36q0 26 28 26"/></g>
+  <path d="M74 71 102 84 74 97Z" fill="#D9552B"/>
+</svg>
 
 <header class="site-header">
-  <div class="wrap">
-    <a href="#top" aria-label="Thurr Solutions home">
-      <img src="assets/lockup-horizontal.svg" alt="Thurr Solutions">
-    </a>
-    <nav class="site-nav">
-      <a class="nav-link" href="#range">What I build</a>
-      <a class="btn" id="nav-cta" href="/consult.html">Book a consult</a>
-    </nav>
-  </div>
+  <a href="#top" aria-label="Thurr Solutions home">
+    <img src="assets/lockup-horizontal-reversed.svg" alt="Thurr Solutions" width="240" height="84">
+  </a>
+  <nav class="site-nav" id="site-nav">
+    <a class="btn btn-ghost" id="nav-cta" href="/consult.html"></a>
+  </nav>
 </header>
 
 <main id="top">
 
-  <!-- 1 — HOOK. Above the fold: visible immediately, never gated on motion. -->
-  <section class="hook" id="hook">
-    <div class="wrap">
-      <p class="kicker" id="hook-kicker"></p>
-      <h1 class="display" id="hook-headline"></h1>
-      <p class="lede" id="hook-sub"></p>
-      <a class="btn" id="hook-cta" href="/consult.html"></a>
-    </div>
+  <!-- 00 — HOOK. Above the fold: visible immediately, never gated on motion. -->
+  <section class="hero wrap" id="hero">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <p class="exit" id="hero-exit"></p>
+    <h1 class="display" id="hero-headline"></h1>
+    <p class="lede" id="hero-sub"></p>
+    <a class="btn" id="hero-cta" href="/consult.html"></a>
+    <div class="hero-meta" id="hero-meta"></div>
   </section>
 
-  <!-- 2 — COST -->
-  <section id="cost">
-    <div class="wrap">
-      <h2 class="h2 r-fade"></h2>
-      <div class="prose" id="cost-body"></div>
-      <p class="pull r-fade"></p>
-      <p class="pull-note caption r-fade"></p>
-    </div>
-  </section>
+  <div class="marquee" aria-hidden="true"><div class="mq-track" id="mq"></div></div>
 
-  <!-- 3 — THE ROUTE. Signature interaction: a lead travels the stages and stalls. -->
-  <section id="map">
-    <div class="wrap">
-      <h2 class="h2 r-fade"></h2>
-      <p class="lede r-fade" id="map-sub"></p>
-
-      <!-- Editorial device 5, per BrandKit/STUDIO/REFERENCE-EDITORIAL.md: the lens
-           runs as a margin note beside the route on wide screens, and falls back
-           above it on narrow ones. -->
-      <div class="route-spread">
+  <!-- 01 — THE ROUTE. Signature interaction: a lead travels the stages and stalls. -->
+  <section class="wrap" id="route-sec">
+    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2></div>
+    <p class="lede r-fade" id="map-sub"></p>
+    <div class="route-spread">
       <div class="route" id="route">
         <div class="route-track" aria-hidden="true">
           <div class="route-line"></div>
@@ -75,65 +68,70 @@
         </div>
         <ol class="stages" id="stages"></ol>
       </div>
-        <aside class="lens r-fade" id="map-lens"></aside>
+      <aside class="lens r-fade" id="map-lens"></aside>
+    </div>
+  </section>
+
+  <!-- 02 — PROCESS -->
+  <section class="wrap" id="process">
+    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2><span class="sec-note"></span></div>
+    <div class="steps" id="steps"></div>
+    <p class="honest r-fade"></p>
+  </section>
+
+  <!-- 03 — SELECTED WORK -->
+  <section class="wrap" id="work">
+    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2><span class="sec-note"></span></div>
+    <div class="work-grid" id="work-grid"></div>
+    <p class="honest r-fade" id="work-honest"></p>
+  </section>
+
+  <!-- 04 — THE MATH. The visitor's own numbers, never a claimed result. -->
+  <section class="wrap" id="calc-sec">
+    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2><span class="sec-note"></span></div>
+    <div class="calc">
+      <div class="calc-inputs r-fade" id="calc-inputs"></div>
+      <div class="calc-out r-fade">
+        <span class="calc-label" id="calc-label"></span>
+        <div class="calc-big" id="calc-annual">$0</div>
+        <div class="calc-split">
+          <div><b id="calc-hours">0</b><span id="calc-split-a"></span></div>
+          <div><b id="calc-reclaim">$0</b><span id="calc-split-b"></span></div>
+        </div>
+        <p class="calc-disc" id="calc-disc"></p>
       </div>
     </div>
   </section>
 
-  <!-- 4 — PROCESS. A real sequence, so numbers earn their place. Not cards. -->
-  <section id="process">
-    <div class="wrap">
-      <h2 class="h2 r-fade"></h2>
-      <ol class="steps" id="steps"></ol>
-      <p class="honest r-fade"></p>
+  <!-- 05 — GUARANTEES -->
+  <section class="wrap" id="guarantee">
+    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2><span class="sec-note"></span></div>
+    <div class="guar" id="guar"></div>
+  </section>
+
+  <!-- 06 — WHO -->
+  <section class="wrap" id="who">
+    <div class="sec-head"><span class="exit"></span></div>
+    <div class="who-grid" id="who-grid">
+      <div id="who-body"></div>
     </div>
   </section>
 
-  <!-- 5 — PROOF. Editorial list, not a card grid. -->
-  <section id="proof">
-    <div class="wrap">
-      <h2 class="h2 r-fade"></h2>
-      <p class="lede r-fade" id="proof-sub"></p>
-      <div class="proofs" id="proofs"></div>
-    </div>
-  </section>
-
-
-  <!-- 6 — RANGE. Definition rows, not a services card grid. -->
-  <section id="range">
-    <div class="wrap">
-      <h2 class="h2 r-fade"></h2>
-      <p class="lede r-fade" id="range-sub"></p>
-      <dl class="range" id="range-list"></dl>
-      <p class="range-close r-fade"></p>
-    </div>
-  </section>
-
-  <!-- 7 — WHO -->
-  <section id="who">
-    <div class="wrap">
-      <div class="who-grid">
-        <div class="portrait r-fade" id="portrait"></div>
-        <div id="who-body"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8 — BOOK -->
-  <section class="book" id="book">
-    <div class="wrap">
-      <h2 class="display-sm r-fade"></h2>
-      <p class="lede r-fade" id="book-body"></p>
-      <a class="btn btn-lg r-fade" id="book-cta" href="#"></a>
-      <p class="reassure caption r-fade"></p>
-    </div>
+  <!-- 07 — BOOK -->
+  <section class="wrap book" id="book">
+    <div class="sec-head"><span class="exit"></span></div>
+    <h2 class="display-sm r-fade"></h2>
+    <p class="lede r-fade" id="book-body"></p>
+    <a class="btn btn-lg r-fade" id="book-cta" href="/consult.html"></a>
+    <span class="book-alt r-fade" id="book-alt"></span>
+    <p class="reassure caption r-fade"></p>
   </section>
 
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <img class="footer-mark" src="assets/lockup-horizontal-descriptor.svg"
+    <img class="footer-mark" src="assets/lockup-horizontal-descriptor-reversed.svg"
          alt="Thurr Solutions — Brand &amp; Web Studio" width="232" height="97">
     <p class="footer-boiler" id="f-boiler"></p>
     <div class="footer-meta">

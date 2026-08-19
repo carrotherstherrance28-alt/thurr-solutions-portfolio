@@ -38,6 +38,7 @@ export const content = {
       { label: "Process", href: "#process" },
       { label: "Work", href: "#work" },
       { label: "Value", href: "#calc-sec" },
+      { label: "Who", href: "#who" },
     ],
   },
 
@@ -187,6 +188,15 @@ export const content = {
         year: "2026",
         status: "In progress",
         tag: "Client work",
+      },
+      {
+        title: "Cinematic microsites",
+        client: "In-house · niche concepts",
+        kind: "Motion · Web",
+        body: "Six scroll-driven sites in a day. Each wraps an eight-second film cut for that trade, and scroll position drives the video frame by frame, so the page plays as you read it. Concept footage, labelled as such on every page. A demo pretending to be somebody's real premises is worth less than one that admits what it is.",
+        year: "2026",
+        status: "Live",
+        tag: "In-house",
       },
       {
         title: "Thurr Tag",

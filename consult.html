@@ -42,16 +42,23 @@
 
     <div id="google-booking" class="booking-slot" hidden></div>
 
+    <!--
+      Fallback only. consult.js hides this whenever any booking option in
+      content.js has a URL, which today the 30 minute one does.
+
+      NOTE: this form has no working handler. The site is hosted on Vercel, and
+      the Netlify form attributes it used to carry did nothing there; posting it
+      returns 405 from the static host. If the booking URLs are ever removed,
+      this becomes visible and will fail. Wire it to a Vercel serverless function
+      that forwards to E1 before relying on it.
+    -->
     <form
       id="fallback-form"
       class="consult-form"
       name="consult"
       method="POST"
-      data-netlify="true"
-      netlify-honeypot="company-website"
       action="/consult-thanks.html"
     >
-      <input type="hidden" name="form-name" value="consult">
       <p class="hp"><label>Leave this empty <input name="company-website" tabindex="-1"></label></p>
 
       <fieldset class="field">

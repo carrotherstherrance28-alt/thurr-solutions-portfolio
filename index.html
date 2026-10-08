@@ -1,147 +1,128 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thurr Solutions · brand, web and automation studio</title>
-<meta name="description" content="We build identity systems, the sites they live on, and the systems behind them. Consult first: we find where the business is losing people, then design against that.">
-
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="alternate icon" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-
-<meta property="og:title" content="Thurr Solutions">
-<meta property="og:description" content="Direction, then design. Brands, the sites they live on, and the systems behind them.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://thurrsolutions.com">
-<meta name="theme-color" content="#16150F">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thurrsolutions.com/">
+  <meta property="og:title" content="Thurr Solutions · A clearer presence. A better way to work.">
+  <meta property="og:description" content="Brands, websites and practical business tools, built directly with Therrance Carrothers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thurrsolutions.com/">
+  <title>Thurr Solutions · A clearer presence. A better way to work.</title>
+  <meta name="description" content="Brands, websites and practical business tools, built directly with Therrance Carrothers.">
+  <meta name="theme-color" content="#16150f">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/direction.css">
+  <script src="/direction.js" defer></script>
 </head>
 <body>
-
-<a class="skip" href="#top">Skip to content</a>
-
-<!-- The mark travels the left edge as you scroll, and the section waypoints
-     light as it passes them. Both are decorative; the page reads without them. -->
-<div class="rail" aria-hidden="true"><div class="rail-fill" id="rail-fill"></div></div>
-<svg class="rail-mark" id="rail-mark" viewBox="0 0 112 112" aria-hidden="true">
-  <g stroke="#D9552B" stroke-width="13" fill="none"><path d="M18 22H86"/><path d="M52 22v36q0 26 28 26"/></g>
-  <path d="M74 71 102 84 74 97Z" fill="#D9552B"/>
-</svg>
-
-<header class="site-header">
-  <a href="#top" aria-label="Thurr Solutions home">
-    <img src="assets/lockup-horizontal-reversed.svg" alt="Thurr Solutions" width="240" height="84">
-  </a>
-  <nav class="site-nav" id="site-nav">
-    <a class="btn btn-ghost" id="nav-cta" href="/consult.html"></a>
-  </nav>
-</header>
-
-<main id="top">
-
-  <!-- 00 — HOOK. Above the fold: visible immediately, never gated on motion. -->
-  <section class="hero wrap" id="hero">
-    <canvas id="field" aria-hidden="true"></canvas>
-    <p class="exit" id="hero-exit"></p>
-    <h1 class="display" id="hero-headline"></h1>
-    <p class="lede" id="hero-sub"></p>
-    <a class="btn" id="hero-cta" href="/consult.html"></a>
-    <div class="hero-meta" id="hero-meta"></div>
-  </section>
-
-  <div class="marquee" aria-hidden="true"><div class="mq-track" id="mq"></div></div>
-
-  <!-- 01 — THE ROUTE. Signature interaction: a lead travels the stages and stalls. -->
-  <section class="wrap" id="route-sec">
-    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2></div>
-    <p class="lede r-fade" id="map-sub"></p>
-    <div class="route-spread">
-      <div class="route" id="route">
-        <div class="route-track" aria-hidden="true">
-          <div class="route-line"></div>
-          <div class="route-dot" id="dot"><span class="dot-label" id="dot-label"></span></div>
-        </div>
-        <ol class="stages" id="stages"></ol>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <a href="#top" class="logo" aria-label="Thurr Solutions home"><img src="/assets/lockup-horizontal-reversed.svg" width="152" height="54" alt="Thurr Solutions"></a>
+    <nav aria-label="Main navigation"><a href="#services">What I do</a><a href="#approach">The approach</a><a class="nav-cta" href="/consult.html">Let's talk <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Independent studio · St. Louis / Nationwide</p>
+        <h1 id="hero-title">A clearer<br>presence.<br><span>A better way<br>to work.</span></h1>
+        <p class="hero-lede">I design brands and websites, and build practical tools around the way your business works.</p>
+        <div class="actions"><a class="button primary" href="/consult.html">Book a consultation <span aria-hidden="true">↗</span></a><a class="text-link" href="#services">Find your starting point <span aria-hidden="true">↓</span></a></div>
       </div>
-      <aside class="lens r-fade" id="map-lens"></aside>
-    </div>
-  </section>
-
-  <!-- 02 — PROCESS -->
-  <section class="wrap" id="process">
-    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2><span class="sec-note"></span></div>
-    <div class="steps" id="steps"></div>
-    <p class="honest r-fade"></p>
-  </section>
-
-  <!-- 03 — SELECTED WORK -->
-  <section class="wrap" id="work">
-    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2><span class="sec-note"></span></div>
-    <div class="work-grid" id="work-grid"></div>
-    <p class="honest r-fade" id="work-honest"></p>
-  </section>
-
-  <!-- 04 — THE MATH. The visitor's own numbers, never a claimed result. -->
-  <section class="wrap" id="calc-sec">
-    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2><span class="sec-note"></span></div>
-    <div class="calc">
-      <div class="calc-inputs r-fade" id="calc-inputs"></div>
-      <div class="calc-out r-fade">
-        <span class="calc-label" id="calc-label"></span>
-        <div class="calc-big" id="calc-annual">$0</div>
-        <div class="calc-split">
-          <div><b id="calc-hours">0</b><span id="calc-split-a"></span></div>
-          <div><b id="calc-reclaim">$0</b><span id="calc-split-b"></span></div>
+      <div class="art-panel">
+        <div class="art-meta"><span class="eyebrow">A clear direction</span><span class="art-symbol" aria-hidden="true">→</span></div>
+        <div class="art-scene" aria-hidden="true">
+          <div class="sculpture">
+            <svg class="direction-arrow" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+              <defs><path id="direction-arrow-form" d="M72 350L112 390L250 294L222 264L340 186L422 268L424 66L218 64L300 146L170 244L198 274Z" /></defs>
+              <use class="arrow-underside" href="#direction-arrow-form" transform="translate(-27 30)" />
+              <g class="arrow-depth">
+                <use href="#direction-arrow-form" transform="translate(-22.4 25.2)" />
+                <use href="#direction-arrow-form" transform="translate(-21.6 24.3)" />
+                <use href="#direction-arrow-form" transform="translate(-20.8 23.4)" />
+                <use href="#direction-arrow-form" transform="translate(-20.0 22.5)" />
+                <use href="#direction-arrow-form" transform="translate(-19.2 21.6)" />
+                <use href="#direction-arrow-form" transform="translate(-18.4 20.7)" />
+                <use href="#direction-arrow-form" transform="translate(-17.6 19.8)" />
+                <use href="#direction-arrow-form" transform="translate(-16.8 18.9)" />
+                <use href="#direction-arrow-form" transform="translate(-16.0 18.0)" />
+                <use href="#direction-arrow-form" transform="translate(-15.2 17.1)" />
+                <use href="#direction-arrow-form" transform="translate(-14.4 16.2)" />
+                <use href="#direction-arrow-form" transform="translate(-13.6 15.3)" />
+                <use href="#direction-arrow-form" transform="translate(-12.8 14.4)" />
+                <use href="#direction-arrow-form" transform="translate(-12.0 13.5)" />
+                <use href="#direction-arrow-form" transform="translate(-11.2 12.6)" />
+                <use href="#direction-arrow-form" transform="translate(-10.4 11.7)" />
+                <use href="#direction-arrow-form" transform="translate(-9.6 10.8)" />
+                <use href="#direction-arrow-form" transform="translate(-8.8 9.9)" />
+                <use href="#direction-arrow-form" transform="translate(-8.0 9.0)" />
+                <use href="#direction-arrow-form" transform="translate(-7.2 8.1)" />
+                <use href="#direction-arrow-form" transform="translate(-6.4 7.2)" />
+                <use href="#direction-arrow-form" transform="translate(-5.6 6.3)" />
+                <use href="#direction-arrow-form" transform="translate(-4.8 5.4)" />
+                <use href="#direction-arrow-form" transform="translate(-4.0 4.5)" />
+                <use href="#direction-arrow-form" transform="translate(-3.2 3.6)" />
+                <use href="#direction-arrow-form" transform="translate(-2.4 2.7)" />
+                <use href="#direction-arrow-form" transform="translate(-1.6 1.8)" />
+                <use href="#direction-arrow-form" transform="translate(-0.8 0.9)" />
+              </g>
+              <use class="arrow-face" href="#direction-arrow-form" />
+              <path class="arrow-fold" d="M170 244L198 274L250 294L222 264Z" />
+              <path class="arrow-head-facet" d="M424 66L320 166L422 268Z" />
+              <path class="arrow-crease" d="M300 146L340 186M198 274L222 264" />
+              <path class="arrow-signal" d="M94 366L224 282L190 254L320 166L394 94" pathLength="100" />
+            </svg>
+          </div>
         </div>
-        <p class="calc-disc" id="calc-disc"></p>
+        <div class="art-caption"><p>Direction, then design.<br>Made to move forward.</p><button id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion <span aria-hidden="true">Ⅱ</span></button></div>
       </div>
-    </div>
-  </section>
+      <div class="hero-foot"><p>Built directly with Therrance Carrothers.</p><a href="#services">A place to start <span aria-hidden="true">↓</span></a></div>
+    </section>
 
-  <!-- 05 — GUARANTEES -->
-  <section class="wrap" id="guarantee">
-    <div class="sec-head"><span class="exit"></span><h2 class="h2"></h2><span class="sec-note"></span></div>
-    <div class="guar" id="guar"></div>
-  </section>
+    <section class="services paper" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-intro"><p class="eyebrow">01 / What I can build</p><h2 id="services-title">Start with what<br>needs to change.</h2><p>You don't need the whole answer before we talk. Bring the idea, the rough edges, or the process that's taking too much of your time.</p></div>
+        <div class="service-rows">
+          <details name="starting-point" open>
+            <summary><span class="number">01</span><div><span class="eyebrow">Websites & digital experiences</span><h3>Make the first impression count.</h3></div><span class="toggle" aria-hidden="true"></span></summary>
+            <div class="service-body"><p>A clear website that helps people understand your business and take the next step. Designed around your offer, your customers, and the way you want enquiries to arrive.</p><div class="deliverables"><p class="eyebrow">A scope can include</p><ul><li>Page structure and website copy</li><li>Responsive design and development</li><li>Contact, enquiry or booking connections</li></ul></div></div>
+          </details>
+          <details name="starting-point">
+            <summary><span class="number">02</span><div><span class="eyebrow">Brand & identity</span><h3>Give the business a clear identity.</h3></div><span class="toggle" aria-hidden="true"></span></summary>
+            <div class="service-body"><p>A visual direction you can use consistently across your website, proposals, and everyday business. We work out what the brand needs to say, then give it a useful set of design decisions.</p><div class="deliverables"><p class="eyebrow">A scope can include</p><ul><li>Logo and identity assets</li><li>Colour and typography direction</li><li>Guidelines and practical templates</li></ul></div></div>
+          </details>
+          <details name="starting-point">
+            <summary><span class="number">03</span><div><span class="eyebrow">Tools & automation</span><h3>Connect the work behind the scenes.</h3></div><span class="toggle" aria-hidden="true"></span></summary>
+            <div class="service-body"><p>Useful tools for the work you repeat. We map the process first, then decide where a connection, a small app, or a better view of your information would help.</p><div class="deliverables"><p class="eyebrow">A scope can include</p><ul><li>Process mapping and system design</li><li>Internal tools and dashboards</li><li>Connections between existing tools</li></ul></div></div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-  <!-- 06 — WHO -->
-  <section class="wrap" id="who">
-    <div class="sec-head"><span class="exit"></span></div>
-    <div class="who-grid" id="who-grid">
-      <div id="who-body"></div>
-    </div>
-  </section>
+    <section class="approach wrap" id="approach" aria-labelledby="approach-title">
+      <div class="approach-heading"><p class="eyebrow">02 / The approach</p><h2 id="approach-title">The front end.<br>The follow-through.</h2><p>The website is one part of the experience. What happens after someone gets in touch deserves the same care.</p></div>
+      <div class="workflow" aria-label="An example enquiry workflow">
+        <div class="workflow-label"><span class="eyebrow">Example workflow</span><span class="eyebrow">Website → enquiry → next step</span></div>
+        <ol><li><span class="workflow-icon" aria-hidden="true">↗</span><span class="eyebrow">First impression</span><h3>A clear offer.</h3><p>Help the right person understand what you do and where to start.</p></li><li><span class="workflow-icon" aria-hidden="true">+</span><span class="eyebrow">First contact</span><h3>The useful details.</h3><p>Collect the information you need to have a worthwhile conversation.</p></li><li><span class="workflow-icon" aria-hidden="true">→</span><span class="eyebrow">Follow-through</span><h3>A defined next step.</h3><p>Give the enquiry a clear home and decide what should happen next.</p></li></ol>
+        <p class="workflow-note">The connections and tools are chosen around your process and agreed scope.</p>
+      </div>
+    </section>
 
-  <!-- 07 — BOOK -->
-  <section class="wrap book" id="book">
-    <div class="sec-head"><span class="exit"></span></div>
-    <h2 class="display-sm r-fade"></h2>
-    <p class="lede r-fade" id="book-body"></p>
-    <a class="btn btn-lg r-fade" id="book-cta" href="/consult.html"></a>
-    <span class="book-alt r-fade" id="book-alt"></span>
-    <p class="reassure caption r-fade"></p>
-  </section>
+    <section class="founder paper" id="studio" aria-labelledby="founder-title">
+      <div class="wrap founder-grid">
+        <div><p class="eyebrow">03 / The person you'll work with</p><h2 id="founder-title">Therrance<br>Carrothers.</h2><p class="founder-role">Founder · Designer · Builder</p></div>
+        <div class="founder-copy"><p>You work with me directly. I bring the design and technical work into the same conversation, so we can decide what makes sense for your business.</p><p>We define the scope, deliverables, price, and payment schedule before the build starts. Then we review the work together and walk through what you need to use it.</p><a class="text-link" href="mailto:therrance@thurrsolutions.com?subject=Project%20or%20collaboration">Have a project or collaboration in mind? <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
 
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <img class="footer-mark" src="assets/lockup-horizontal-descriptor-reversed.svg"
-         alt="Thurr Solutions — Brand &amp; Web Studio" width="232" height="97">
-    <p class="footer-boiler" id="f-boiler"></p>
-    <div class="footer-meta">
-      <span id="f-line"></span>
-      <a id="f-email" href="#"></a>
-      <span id="f-note"></span>
-    </div>
-  </div>
-</footer>
-
-<script type="module" src="main.js"></script>
+    <section class="contact wrap" id="contact" aria-labelledby="contact-title"><p class="eyebrow">Your next move</p><div class="contact-grid"><h2 id="contact-title">Let's make<br>it make sense<span>.</span></h2><div><p>Tell me what you're working on.<br>We'll find a useful place to start.</p><a class="button primary" href="/consult.html">Book a consultation <span aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+  <footer class="footer wrap"><a href="#top" class="logo" aria-label="Return to top"><img src="/assets/lockup-horizontal-reversed.svg" width="144" height="50" alt="Thurr Solutions"></a><a href="mailto:therrance@thurrsolutions.com">therrance@thurrsolutions.com <span aria-hidden="true">↗</span></a><p class="eyebrow">© 2026 Thurr Solutions LLC</p></footer>
 </body>
 </html>

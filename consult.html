@@ -40,17 +40,31 @@
       system behind them, we scope it. If there isn't, you'll know before spending a dollar.
     </p>
 
-    <div id="google-booking" class="booking-slot" hidden></div>
+    <div id="google-booking" class="booking-slot">
+      <p class="lede booking-intro">Pick a length and grab a time. I'm free 9am to 9pm Central, any day.</p>
+      <div class="booking-options">
+        <a class="booking-option" data-pending="true" href="mailto:therrance@thurrsolutions.com?subject=15%20min%20consult">
+          <span class="booking-time">15 min</span>
+          <span class="booking-note">A quick question or a gut check</span>
+          <span class="booking-go">Ask by email →</span>
+        </a>
+        <a class="booking-option" data-recommended="true" href="https://calendar.app.google/oeuhvW3zAonDHoC49" rel="noopener">
+          <span class="booking-time">30 min</span>
+          <span class="booking-note">Walk the lead route end to end. Recommended starting point.</span>
+          <span class="booking-go" aria-hidden="true">Pick a time →</span>
+        </a>
+        <a class="booking-option" data-pending="true" href="mailto:therrance@thurrsolutions.com?subject=45%20min%20consult">
+          <span class="booking-time">45 min</span>
+          <span class="booking-note">Route plus scoping a build</span>
+          <span class="booking-go">Ask by email →</span>
+        </a>
+      </div>
+    </div>
 
     <!--
-      Fallback only. consult.js hides this whenever any booking option in
-      content.js has a URL, which today the 30 minute one does.
-
-      NOTE: this form has no working handler. The site is hosted on Vercel, and
-      the Netlify form attributes it used to carry did nothing there; posting it
-      returns 405 from the static host. If the booking URLs are ever removed,
-      this becomes visible and will fail. Wire it to a Vercel serverless function
-      that forwards to E1 before relying on it.
+      Parked form: there is no working submission handler. Keep it hidden until
+      a handler is implemented and verified. The direct booking and email links
+      above remain available when JavaScript or booking configuration fails.
     -->
     <form
       id="fallback-form"
@@ -58,6 +72,7 @@
       name="consult"
       method="POST"
       action="/consult-thanks.html"
+      hidden
     >
       <p class="hp"><label>Leave this empty <input name="company-website" tabindex="-1"></label></p>
 
@@ -75,7 +90,7 @@
             <input type="radio" name="duration" value="30 minutes" checked>
             <span class="choice-body">
               <span class="choice-time">30 min</span>
-              <span class="choice-note">Walk the lead route end to end. Most people pick this</span>
+              <span class="choice-note">Walk the lead route end to end. Recommended starting point.</span>
             </span>
           </label>
           <label class="choice">
@@ -136,6 +151,6 @@
   </div>
 </footer>
 
-<script type="module" src="consult.js"></script>
+<script type="module" src="consult.js?v=5c84bbbcbd6c"></script>
 </body>
 </html>

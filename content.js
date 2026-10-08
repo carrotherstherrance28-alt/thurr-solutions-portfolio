@@ -19,13 +19,13 @@ export const content = {
   // BOOKING
   // Google appointment schedules support ONE duration each — there is no way to
   // offer three lengths inside a single schedule. So: three schedules, three links,
-  // one page. Paste each link below as you create it. Any that are still null fall
-  // back to the form, so this works half-configured too.
+  // one page. Paste each link below as you create it. Any that are still null use
+  // email links. consult.html keeps static choices available if this module fails.
   booking: {
     availability: "9am to 9pm Central, any day",
     options: [
       { label: "15 min", note: "A quick question or a gut check", url: null },
-      { label: "30 min", note: "Walk the lead route end to end. Most people pick this", url: "https://calendar.app.google/oeuhvW3zAonDHoC49", recommended: true },
+      { label: "30 min", note: "Walk the lead route end to end. Recommended starting point.", url: "https://calendar.app.google/oeuhvW3zAonDHoC49", recommended: true },
       { label: "45 min", note: "Route plus scoping a build", url: null },
     ],
   },

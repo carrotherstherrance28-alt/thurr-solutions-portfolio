@@ -1,89 +1,89 @@
 # thurrsolutions.com
 
-Static site. No build step, no framework. Deploy by pointing Netlify (or Cloudflare Pages) at
-this folder — `netlify.toml` already sets `publish = "."`.
+Static site; no framework or build step. `Website/` is the editable source. Production is a scoped flat copy in `/Users/thurr/Documents/thurr-solutions-portfolio`.
 
-## Editing it
+## Current files
 
-**Change words, not markup.** Everything the page says lives in `content.js`. Headlines, the five
-stages, the process steps, proof items, the founder copy — all data. `index.html` is scaffolding
-and `main.js` renders content into it.
+- `index.html`: the offer-led homepage with the original folded-arrow hero. Its copy and metadata are native HTML.
+- `direction.css` and `direction.js`: homepage styling and optional decorative motion. The stylesheet URL in `index.html` includes a content fingerprint.
+- `consult.html`, `consult.js` and `content.js`: consultation choices and booking configuration.
+- `styles.css`: consultation and thanks-page styling; retain it when changing homepage styles.
+- `consult-thanks.html`, `assets/` and `card/`: existing routes and assets retained by this release.
+- `main.js`: retained legacy homepage renderer; the current homepage does not load it.
 
-- **Add a proof item** → append to `content.proof.items`
-- **Add your photo** → set `content.who.photo` to `"assets/therrance.jpg"`; a correctly-sized
-  placeholder shows until then
-- **Change the CTA** → `content.book.ctaHref` (currently mailto; swap for a real booking link)
+The original review stays in `review-2026-10-04-offer/`. It is a local, `noindex` preview rather than the production entry point. Production `index.html` uses root asset paths, a canonical URL and Open Graph metadata; it has no preview `noindex` directive. Editing the root homepage does not automatically change the preserved review.
 
-## Brand
+## Hosting and release
 
-Built on `_ControlPlane/BrandKit/STUDIO/DESIGN-SYSTEM.md`. Ink `#16150F` on paper `#FAF9F5`,
-Inter at two weights, 8px spacing grid. **Clay `#F36B21` appears exactly three times** — the hero
-rule, the active stage number, and the scroll rail. It is an accent, not a theme. Do not add a
-fourth.
+| Setting | Value |
+|---|---|
+| Live domain | https://thurrsolutions.com |
+| Host | Vercel, not Netlify |
+| Vercel project | `right-thurr` |
+| Vercel organization | `thurrenterprise-6341s-projects` |
+| Deploy repo | `git@github.com:carrotherstherrance28-alt/thurr-solutions-portfolio.git` |
+| Production branch | `main` |
+| Root / framework | `.` / Other; static files |
 
-The header uses the outlined horizontal lockup at 120px minimum width, per the guidelines.
+Therrance authorized pushing this homepage release on October 8, 2026. That authorization covers this release, not unrelated changes or future releases.
 
-## Motion
+**Do not use the current `ship.sh` for this release.** Its root allowlist omits `direction.css` and `direction.js`; its `rsync --delete` removes files, and its `git add -A` can stage unrelated changes. Its five-file check also misses the new homepage resources and consultation modules. It has not been revised here.
 
-Sections arrive once on scroll and stay — no re-animating on scroll-up, which reads as a gimmick.
+Use the following scoped procedure after local QA. First inspect the deploy repo's status and branch. Stop and reconcile any existing changes or an unexpected branch before copying; do not sweep them into this release.
 
-Three deliberate properties:
-1. **Reveal styles are scoped to `.js-motion`**, a class the script adds to `<html>` on start. If
-   `main.js` fails to load or throws, the class is never added and **every section stays visible**.
-   A scroll effect must never be able to leave the page blank.
-2. **A 2.5s failsafe** reveals everything if the IntersectionObserver never delivers — throttled
-   background tab, old engine, anything unforeseen.
-3. **`prefers-reduced-motion` is fully honoured** — no transitions, no rail.
+```bash
+SITE_SOURCE=/Users/thurr/Documents/ThurrSolutions/Website
+SITE_DEPLOY=/Users/thurr/Documents/thurr-solutions-portfolio
 
-The progress rail animates `transform: scaleX()`, never `width`, so it does not thrash layout.
+git -C "$SITE_DEPLOY" status --short
+git -C "$SITE_DEPLOY" branch --show-current
+
+for site_file in index.html direction.css direction.js consult.html consult.js content.js README.md; do
+  cp "$SITE_SOURCE/$site_file" "$SITE_DEPLOY/$site_file"
+done
+
+git -C "$SITE_DEPLOY" diff --check
+git -C "$SITE_DEPLOY" diff --stat
+git -C "$SITE_DEPLOY" diff -- index.html consult.html consult.js content.js README.md
+
+git -C "$SITE_DEPLOY" add -- index.html direction.css direction.js consult.html consult.js content.js README.md
+git -C "$SITE_DEPLOY" diff --cached --name-only
+git -C "$SITE_DEPLOY" diff --cached --check
+```
+
+Review the staged diff, including the two new files. Only those seven paths belong in this release. Existing `styles.css`, card files, assets and Vercel headers remain in the deploy repo; no directory synchronization or deletion is needed. Never stage `.env` files or `.vercel/`, and do not stage the separate ThurrSolutions parent repo.
+
+Once the staged diff and required QA pass:
+
+```bash
+git -C "$SITE_DEPLOY" commit -m "SITE: publish offer-led folded-arrow homepage and resilient booking"
+git -C "$SITE_DEPLOY" push origin main
+```
+
+A successful push or a Vercel Ready status does not prove the domain is current. Fetch `/`, `/index.html`, `/direction.css`, `/direction.js`, `/consult.html`, `/consult.js`, `/content.js`, `/styles.css`, `/card/` and every referenced local asset. Confirm HTTP status, compare each shipped resource's SHA256 with the deploy copy, and render the real HTTPS homepage. Verify the consultation module URLs including their `?v=` fingerprints. Check `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY` and the configured Referrer-Policy.
+
+If the domain still serves stale bytes after checking deployment status, inspect the linked `right-thurr` project. A production deployment from the deploy repo using `vercel --prod --yes` is a fallback within this release's authorization. Repeat domain byte and browser checks afterward; do not report the site as live while those checks fail.
+
+## Booking
+
+`consult.html` contains three real anchor links before JavaScript runs: a configured 30-minute Google schedule and email alternatives for 15 and 45 minutes. `consult.js` enhances those choices from `content.js`, building the complete replacement before inserting it. Empty configuration, a blocked module or disabled JavaScript leaves the native choices available.
+
+The parked form has no working submission handler. It stays hidden in HTML and JavaScript; do not expose or rely on it. Checking booking means inspecting links and the schedule destination, not submitting a booking or email.
+
+The stylesheet and consultation modules have content fingerprints in their URLs. After editing `direction.css`, update `/direction.css?v=...` in `index.html` with the first 12 SHA256 characters of that CSS file. `consult.html` loads `consult.js?v=...`, which imports `content.js?v=...`: use the first 12 SHA256 characters of `content.js` in its import URL, then hash the resulting `consult.js` and update its URL in `consult.html`. Copy the matching resource and referencing HTML/module together so source and deploy stay synchronized. This prevents cached resources from being paired with new markup.
+
+## Design, motion and checks
+
+Ink `#16150f`, paper `#faf9f5` and clay `#d9552b`; Archivo, Instrument Sans and JetBrains Mono. The homepage uses an original folded-arrow SVG, without client proof, portfolio imagery or a founder-photo placeholder. Clay-filled buttons use ink labels for contrast.
+
+The homepage content, navigation and native service disclosures work without JavaScript. Motion is optional and pauses through its visible control, on hover, offscreen and in background tabs. Mobile and reduced-motion preferences receive a static arrow. Before release, check desktop and narrow mobile layouts, horizontal overflow, keyboard focus, service disclosures, motion pause and reduced motion, and booking with JavaScript disabled or modules blocked.
 
 ## Local preview
 
 ```bash
-python3 -m http.server 4173 --directory Website
+python3 -m http.server 4175 --bind 127.0.0.1 --directory /Users/thurr/Documents/ThurrSolutions/Website
 ```
 
-Or `preview_start` with the `thurr-website` config in `.claude/launch.json`.
+Current root: http://127.0.0.1:4175/
 
-## Booking
-
-The consult page reads `booking.options` in `content.js`. Each length has its own `url`:
-
-```js
-booking: {
-  availability: "9am to 9pm Central, any day",
-  options: [
-    { label: "15 min", note: "...", url: null },
-    { label: "30 min", note: "...", url: null, recommended: true },
-    { label: "45 min", note: "...", url: null },
-  ],
-}
-```
-
-- **No urls set** → the Netlify form. Collects duration, times, name and email; you confirm by hand.
-- **Any url set** → the form hides and the page shows the lengths as direct choices. Configured
-  lengths link to their Google schedule; unconfigured ones fall back to email rather than showing a
-  dead link. So it works half-finished.
-
-### Why three schedules, not one
-
-**A Google appointment schedule holds exactly one duration.** There is no setting for offering
-several lengths inside one schedule, and no API for appointment schedules at all — the Calendar
-API's `eventType` enum has no value for them. Offering 15 / 30 / 45 means three schedules and three
-links.
-
-That is a Google constraint, not a design choice, and the visitor never sees it: they get one page
-with three lengths on it.
-
-### Setup, once
-
-For each of 15, 30 and 45 minutes:
-
-1. calendar.google.com → **Create** → **Appointment schedule**
-2. Set that duration
-3. General availability **9am–9pm, every day**, timezone **Central**
-4. Turn on **Google Meet** so each booking generates its own link
-5. Add a buffer (15 min is sensible) and a minimum booking notice
-6. **Share** → copy the booking link → paste it into the matching `url` in `content.js`
-
-Do the 30-minute one first — it is marked `recommended` and is the length most people pick.
+Preserved design review: http://127.0.0.1:4175/review-2026-10-04-offer/

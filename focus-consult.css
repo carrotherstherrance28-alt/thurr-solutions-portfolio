@@ -1,0 +1,20 @@
+@font-face{font-family:Syne;src:url('assets/fonts/Syne-Variable.ttf') format('truetype');font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:Inter;src:url('assets/fonts/Inter-Variable.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+body.focus-consult{font-family:Inter,Arial,sans-serif;background:#16150F;color:#FAF9F5;--display:'Syne',Arial,sans-serif;--body:'Inter',Arial,sans-serif;--mono:'Inter',Arial,sans-serif;--accent:#F36B21;--clay:#F36B21}
+.focus-consult h1,.focus-consult h2,.focus-consult .display-sm,.focus-consult .booking-time{font-family:Syne,Arial,sans-serif;letter-spacing:-.055em;font-weight:700}
+.focus-consult h1{font-size:clamp(2.5rem,6vw,5.5rem);line-height:1.04;text-transform:none}
+.focus-consult .consult-page{border-top:1px solid #38382F}
+.focus-consult .booking-options{gap:0;border-top:1px solid #77776B}
+.focus-consult .booking-option{border-radius:0;border-width:0 0 1px;background:transparent;box-shadow:none;min-width:0}
+.focus-consult .booking-option[data-recommended="true"]{background:#FAF9F5;color:#16150F;border-color:#16150F}
+.focus-consult .booking-option[data-recommended="true"] .booking-note,.focus-consult .booking-option[data-recommended="true"] .booking-go{color:#34342C}
+.focus-consult .booking-option[data-recommended="true"]:before{color:#16150F;background:#F36B21}
+.focus-consult a:focus-visible,.focus-consult button:focus-visible,.focus-consult input:focus-visible,.focus-consult textarea:focus-visible{outline:3px solid #FAF9F5;outline-offset:5px}
+.focus-consult .booking-option[data-recommended="true"]:focus-visible{outline-color:#16150F;outline-offset:-6px}
+.focus-consult .nav-link{display:inline-flex;align-items:center;min-height:44px}
+.focus-consult .skip{position:fixed;top:12px;left:12px;z-index:1000;transform:translateY(-160%);background:#FAF9F5;color:#16150F;padding:12px 18px;font:500 1rem/1.4 Inter,Arial,sans-serif}
+.focus-consult .skip:focus{transform:none;outline:3px solid #F36B21;outline-offset:3px}
+.focus-consult .private-preview-note{padding:20px 24px;border-top:1px solid #38382F;margin:0;font:400 .8125rem/1.5 Inter,Arial,sans-serif;color:#C5C4BC}
+.focus-consult [hidden]{display:none!important}
+@media(max-width:760px){.focus-consult .booking-options{grid-template-columns:1fr}.focus-consult .booking-option{padding:24px;min-height:44px}.focus-consult .site-header{gap:15px}.focus-consult .site-header img{max-width:min(174px,48vw)}}
+@media(prefers-reduced-motion:reduce){.focus-consult *, .focus-consult *::before,.focus-consult *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

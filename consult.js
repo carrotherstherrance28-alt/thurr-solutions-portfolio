@@ -1,12 +1,13 @@
-import { content as C } from "./content.js?v=8e5a4f56fef1";
+import { content as C } from "./content.js?v=6adf74713b31";
 
 const $ = (s) => document.querySelector(s);
 const b = C.booking || {};
 const opts = b.options || [];
+const availabilityNote = b.availability || "Choose a 30-minute time on the calendar, or email me to arrange a 15- or 45-minute call.";
 
 // Configuration enhances the current static booking fallback.
 const hint = $("#availability-hint");
-if (hint) hint.innerHTML = `I'm available <strong>${b.availability}</strong>. Give me two or three options and I'll confirm one.`;
+if (hint) hint.textContent = availabilityNote;
 
 const slot = $("#google-booking");
 const form = $("#fallback-form");
@@ -20,7 +21,7 @@ if (slot && opts.length) {
 
   const intro = document.createElement("p");
   intro.className = "lede booking-intro";
-  intro.textContent = `Pick a length and grab a time. I'm free ${b.availability}.`;
+  intro.textContent = availabilityNote;
   fragment.append(intro);
 
   const list = document.createElement("div");

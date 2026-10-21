@@ -22,7 +22,7 @@ export const content = {
   // one page. Paste each link below as you create it. Any that are still null use
   // email links. consult.html keeps static choices available if this module fails.
   booking: {
-    availability: "9am to 9pm Central, any day",
+    availability: "Choose a 30-minute time on the calendar, or email me to arrange a 15- or 45-minute call.",
     options: [
       { label: "15 min", note: "A quick question or a gut check", url: null },
       { label: "30 min", note: "Walk the lead route end to end. Recommended starting point.", url: "https://calendar.app.google/oeuhvW3zAonDHoC49", recommended: true },

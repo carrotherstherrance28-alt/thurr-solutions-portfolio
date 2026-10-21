@@ -12,15 +12,12 @@
 <link rel="alternate icon" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="focus-consult.css">
 </head>
-<body>
+<body class="focus-consult"><a class="skip" href="#consult-main">Skip to content</a>
 
 <header class="site-header">
-  <a href="/" aria-label="Thurr Solutions home">
+  <a href="index.html" aria-label="Thurr Solutions home">
     <img src="assets/lockup-horizontal-reversed.svg" alt="Thurr Solutions" width="240" height="84">
   </a>
   <nav class="site-nav">
@@ -28,7 +25,7 @@
   </nav>
 </header>
 
-<main class="consult-page">
+<main class="consult-page" id="consult-main" tabindex="-1">
   <div class="wrap">
 
     <img class="consult-mark" src="assets/mark-reversed.svg" alt="" width="56" height="56">
@@ -41,7 +38,7 @@
     </p>
 
     <div id="google-booking" class="booking-slot">
-      <p class="lede booking-intro">Pick a length and grab a time. I'm free 9am to 9pm Central, any day.</p>
+      <p class="lede booking-intro">Choose a 30-minute time on the calendar, or email me to arrange a 15- or 45-minute call.</p>
       <div class="booking-options">
         <a class="booking-option" data-pending="true" href="mailto:therrance@thurrsolutions.com?subject=15%20min%20consult">
           <span class="booking-time">15 min</span>
@@ -105,7 +102,7 @@
 
       <div class="field">
         <label class="label" for="times">What times work for you?</label>
-        <p class="hint" id="availability-hint">I'm available <strong>9am to 9pm Central, any day</strong>. Give me two or three options and I'll confirm one.</p>
+        <p class="hint" id="availability-hint">Choose a 30-minute time on the calendar, or email me to arrange a 15- or 45-minute call.</p>
         <textarea id="times" name="preferred_times" rows="3" required
           placeholder="e.g. Tuesday after 6pm, or Thursday morning before 11"></textarea>
       </div>
@@ -151,6 +148,6 @@
   </div>
 </footer>
 
-<script type="module" src="consult.js?v=5c84bbbcbd6c"></script>
+<script type="module" src="consult.js?v=62f8778d3fb9"></script>
 </body>
 </html>
